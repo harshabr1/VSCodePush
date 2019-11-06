@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BOT_Person_ID__c</fullName>
+    <description>This field is created by BOT. It is used to store the BOT Key Contact ID. It is an External ID and used for BOT internal reference.</description>
+    <externalId>true</externalId>
+    <label>Person ID</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>true</unique>
+</CustomField>

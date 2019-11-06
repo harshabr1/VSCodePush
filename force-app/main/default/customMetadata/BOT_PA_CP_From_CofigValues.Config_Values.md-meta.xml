@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Config Values</label>
+    <protected>false</protected>
+    <values>
+        <field>BOT_AppName__c</field>
+        <value xsi:type="xsd:string">VeevaCRM</value>
+    </values>
+    <values>
+        <field>BOT_Client_Id__c</field>
+        <value xsi:type="xsd:double">506.0</value>
+    </values>
+    <values>
+        <field>BOT_EndPoint_URL__c</field>
+        <value xsi:type="xsd:string">https://ws2-was-dev-001.azurewebsites.net/api/GetDocumentURL</value>
+    </values>
+    <values>
+        <field>BOT_SecretKey__c</field>
+        <value xsi:type="xsd:string">2c424b79e3ed255105ffe57ffb4e2c8c2c424b79e3ed25</value>
+    </values>
+    <values>
+        <field>BOT_VersionNumber__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MCOPlan_vod</fullName>
+    <active>true</active>
+    <description>Managed Care Plan</description>
+    <label>MCO Plan_vod</label>
+    <picklistValues>
+        <picklist>Account_Type__c</picklist>
+        <values>
+            <fullName>Admin Org</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PBM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plan Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialty Org</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BOT_Entity_Level__c</picklist>
+        <values>
+            <fullName>Local</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>National</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Medicaid</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Credentials_vod__c</picklist>
+        <values>
+            <fullName>DO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RNP</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Default_Order_Type_vod__c</picklist>
+        <values>
+            <fullName>Direct_vod</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transfer_vod</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Do_Not_Call_vod__c</picklist>
+        <values>
+            <fullName>No_vod</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Yes_vod</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gender_vod__c</picklist>
+        <values>
+            <fullName>F</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Group_Specialty_1_vod__c</picklist>
+        <values>
+            <fullName>REMOVE THIS LOV</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Group_Specialty_2_vod__c</picklist>
+        <values>
+            <fullName>Cardiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Practice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oncology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatrics</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hospital_Type_vod__c</picklist>
+        <values>
+            <fullName>GP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HP</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry</picklist>
+        <values>
+            <fullName>Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apparel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biotechnology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemicals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Machinery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not For Profit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recreation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telecommunications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utilities</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NET_Account_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deceased</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Undetermined</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NET_Account_Type__c</picklist>
+        <values>
+            <fullName>Dialysis %26 Infusion Centers%2C Corporate Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dialysis %26 Infusion Centers%2C General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dialysis %26 Infusion Centers%2C Hospital-based Dialysis%2FInfusion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dialysis %26 Infusion Centers%2C Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare Manufacturer%2C Animal Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare Manufacturer%2C Corporate Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare Manufacturer%2C Device</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare Manufacturer%2C Durable Medical Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare Manufacturer%2C General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare Manufacturer%2C Medical-Surgical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare Manufacturer%2C Non Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare Manufacturer%2C Ophthalmic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare Manufacturer%2C Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare Manufacturer%2C Pharmaceutical%2FBiotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare Manufacturer%2C Vaccine Manufacturer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare Provider%2C General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home Health Care Agencies%2C Corporate Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home Health Care Agencies%2C General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home Health Care Agencies%2C Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Assistance Programs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Corporate Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Employer Groups</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Exclusive Provider Org</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C General Managed Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C HMO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Independent Physicians Assoc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Insurance Carriers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Integrated Health care Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Integrated Healthcare Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Management Service Org</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Medicare Advantage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Medicare Prescription Drug Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Medicare Risk HMO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Medicare Risk PPO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Other Managed Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C PPO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Physician Hospital Org</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Physician Hospital Organization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Physician Practice Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Point of Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care%2C Workers Comp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Board%2C Corporate Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Board%2C General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Board%2C Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Allopathic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Chiropractic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Corporate Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Homeopathic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Naturopathic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Nursing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Occupational Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Optometric</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Oriental Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Osteopathic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Paramedic%2FEMT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Pharmacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Physical Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Podiatric</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Psychology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Respiratory Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Social Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical School%2C Veterinary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Healthcare Provider%2C General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Admin Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Alternative Medicine Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Animal Welfare%2FControl</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Chiropractic Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Clinic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Clinic at Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Community MH Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Corporate %28no public access%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Corporate Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Cystic Fibrosis Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Dentistry Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Dept at Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Group Practice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Group Purchasing Organization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Group at Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C HMO%2FInsurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Hospital Based NH%2FLTC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Independent Medical Billing Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Lab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Nursing Home %2F Long Term Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Occupational Therapy Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Optometry Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Other Org</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Podiatry Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Prison</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Psychology%2FCounseling Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Residential Facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Respiratory Therapy Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C University</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Veterinary Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Veterinary Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization%2C Zoo%2FWildlife Refuge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C Compounding Pharmacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C Corporate Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C HIV%2FAIDS Clinic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C Home Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C Kaiser</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C Long Term Care Pharmacy Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C Mail Order Pharmacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C Oncology Specialty Pharmacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C Other Managed Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C Other Specialty Clinic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C Pharmacy Benefit Mgmt Org</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy%2C Specialty Pharmacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prison%2C City %26 Local</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prison%2C Corporate Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prison%2C County</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prison%2C Federal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prison%2C Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prison%2C State</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residency Program%2C Corporate Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residency Program%2C Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residency Program%2C Residency</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>No_Orders_vod__c</picklist>
+        <values>
+            <fullName>No_vod</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Yes_vod</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Offerings__c</picklist>
+        <values>
+            <fullName>HMO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HRA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPO</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Order_Type_vod__c</picklist>
+        <values>
+            <fullName>Direct_vod</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transfer_vod</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ownership</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subsidiary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Specialty_1_vod__c</picklist>
+        <values>
+            <fullName>REMOVE THIS LOV</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Specialty_2_vod__c</picklist>
+        <values>
+            <fullName>Cardiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Practice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oncology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatrics</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Channel Partner %2F Reseller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Channel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Installation Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology Partner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

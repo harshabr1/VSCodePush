@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_vod__c</fullName>
+    <description>Status codes for this product in this benefit design line. For example, one of the codes might be &#39;Tier 1&#39;.  The valid values in this field are controlled by the value of the type field, because not all status values are valid for all types of benefit designs.</description>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type_vod__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Approved with Restrictions</fullName>
+                <default>false</default>
+                <label>Approved with Restrictions</label>
+            </value>
+            <value>
+                <fullName>Covered</fullName>
+                <default>false</default>
+                <label>Covered</label>
+            </value>
+            <value>
+                <fullName>Non-Formulary</fullName>
+                <default>false</default>
+                <label>Non-Formulary</label>
+            </value>
+            <value>
+                <fullName>Non-Formulary / Covered</fullName>
+                <default>false</default>
+                <label>Non-Formulary / Covered</label>
+            </value>
+            <value>
+                <fullName>Non-Formulary / Higher Copay</fullName>
+                <default>false</default>
+                <label>Non-Formulary / Higher Copay</label>
+            </value>
+            <value>
+                <fullName>Non-Formulary / Not Reimbursed</fullName>
+                <default>false</default>
+                <label>Non-Formulary / Not Reimbursed</label>
+            </value>
+            <value>
+                <fullName>Non-Formulary / Prior Authorization</fullName>
+                <default>false</default>
+                <label>Non-Formulary / Prior Authorization</label>
+            </value>
+            <value>
+                <fullName>Non-Formulary / Unknown</fullName>
+                <default>false</default>
+                <label>Non-Formulary / Unknown</label>
+            </value>
+            <value>
+                <fullName>Non-Preferred</fullName>
+                <default>false</default>
+                <label>Non-Preferred</label>
+            </value>
+            <value>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+                <label>Not Covered</label>
+            </value>
+            <value>
+                <fullName>Not Listed / Covered</fullName>
+                <default>false</default>
+                <label>Not Listed / Covered</label>
+            </value>
+            <value>
+                <fullName>Not Listed / Higher Copay</fullName>
+                <default>false</default>
+                <label>Not Listed / Higher Copay</label>
+            </value>
+            <value>
+                <fullName>Not Listed / Not Reimbursed</fullName>
+                <default>false</default>
+                <label>Not Listed / Not Reimbursed</label>
+            </value>
+            <value>
+                <fullName>Not Listed / Prior Authorization</fullName>
+                <default>false</default>
+                <label>Not Listed / Prior Authorization</label>
+            </value>
+            <value>
+                <fullName>Not Listed / Unknown</fullName>
+                <default>false</default>
+                <label>Not Listed / Unknown</label>
+            </value>
+            <value>
+                <fullName>Not Reimbursed</fullName>
+                <default>false</default>
+                <label>Not Reimbursed</label>
+            </value>
+            <value>
+                <fullName>Preferred</fullName>
+                <default>false</default>
+                <label>Preferred</label>
+            </value>
+            <value>
+                <fullName>Prior Authorization</fullName>
+                <default>false</default>
+                <label>Prior Authorization</label>
+            </value>
+            <value>
+                <fullName>Tier 1</fullName>
+                <default>false</default>
+                <label>Tier 1</label>
+            </value>
+            <value>
+                <fullName>Tier 2</fullName>
+                <default>false</default>
+                <label>Tier 2</label>
+            </value>
+            <value>
+                <fullName>Tier 3</fullName>
+                <default>false</default>
+                <label>Tier 3</label>
+            </value>
+            <value>
+                <fullName>Tier 4</fullName>
+                <default>false</default>
+                <label>Tier 4</label>
+            </value>
+            <value>
+                <fullName>Tier 5</fullName>
+                <default>false</default>
+                <label>Tier 5</label>
+            </value>
+            <value>
+                <fullName>Tier 6</fullName>
+                <default>false</default>
+                <label>Tier 6</label>
+            </value>
+            <value>
+                <fullName>Tier 7</fullName>
+                <default>false</default>
+                <label>Tier 7</label>
+            </value>
+            <value>
+                <fullName>Tier 8</fullName>
+                <default>false</default>
+                <label>Tier 8</label>
+            </value>
+            <value>
+                <fullName>Tier 9</fullName>
+                <default>false</default>
+                <label>Tier 9</label>
+            </value>
+            <value>
+                <fullName>Unavailable</fullName>
+                <default>false</default>
+                <label>Unavailable</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <controllingFieldValue>Medicare</controllingFieldValue>
+            <valueName>Tier 1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <controllingFieldValue>Medicare</controllingFieldValue>
+            <valueName>Tier 2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <controllingFieldValue>Medicare</controllingFieldValue>
+            <valueName>Tier 3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <controllingFieldValue>Medicare</controllingFieldValue>
+            <valueName>Tier 4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <controllingFieldValue>Medicare</controllingFieldValue>
+            <valueName>Tier 5</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Tier 6</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Tier 7</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Tier 8</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Tier 9</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medicaid</controllingFieldValue>
+            <controllingFieldValue>VA</controllingFieldValue>
+            <valueName>Approved</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medicaid</controllingFieldValue>
+            <valueName>Approved with Restrictions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medicaid</controllingFieldValue>
+            <valueName>Non-Formulary / Covered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medicaid</controllingFieldValue>
+            <valueName>Non-Formulary / Higher Copay</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medicaid</controllingFieldValue>
+            <valueName>Non-Formulary / Not Reimbursed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medicaid</controllingFieldValue>
+            <valueName>Non-Formulary / Prior Authorization</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medicaid</controllingFieldValue>
+            <valueName>Non-Formulary / Unknown</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medicare</controllingFieldValue>
+            <valueName>Not Listed / Covered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medicare</controllingFieldValue>
+            <valueName>Not Listed / Higher Copay</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VA</controllingFieldValue>
+            <valueName>Not Reimbursed</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

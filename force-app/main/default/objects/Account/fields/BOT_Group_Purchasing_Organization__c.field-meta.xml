@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BOT_Group_Purchasing_Organization__c</fullName>
+    <description>It is created by BusinessOne Technologies. It is used to store Group Purchasing Organization(GPO)</description>
+    <externalId>false</externalId>
+    <label>Group Purchasing Organization(GPO)</label>
+    <length>100</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

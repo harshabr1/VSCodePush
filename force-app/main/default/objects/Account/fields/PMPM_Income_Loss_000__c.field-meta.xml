@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PMPM_Income_Loss_000__c</fullName>
+    <description>Per Patient Per Month Income Loss.  Used by MCO and MCO Plan accounts.</description>
+    <externalId>false</externalId>
+    <label>PMPM Income (Loss) (000)</label>
+    <precision>12</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Currency</type>
+</CustomField>

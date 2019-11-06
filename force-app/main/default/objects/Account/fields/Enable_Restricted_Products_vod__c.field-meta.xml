@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enable_Restricted_Products_vod__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If set to true then trigger online will populate the Restricted Products on Insert.  Used to allow data loading to bypass the setting of the Restricted Products</description>
+    <externalId>false</externalId>
+    <label>Enable Restricted Products</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

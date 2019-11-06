@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BOT_Benefit_Design_ID__c</fullName>
+    <description>It is used to store the BOT formulary ID. It is used for BOT internal reference only.</description>
+    <externalId>false</externalId>
+    <label>Benefit Design ID</label>
+    <precision>15</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

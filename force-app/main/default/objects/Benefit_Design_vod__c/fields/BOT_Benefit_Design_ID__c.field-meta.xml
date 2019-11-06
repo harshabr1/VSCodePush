@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BOT_Benefit_Design_ID__c</fullName>
+    <description>It is created by BusinessOne Technologies. It is used to store BOT Formulary ID.</description>
+    <externalId>true</externalId>
+    <label>Benefit Design ID</label>
+    <precision>15</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>true</unique>
+</CustomField>

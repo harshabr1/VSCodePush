@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sample_Default_vod__c</fullName>
+    <description>Double semi-colon delimited list of samples to default on a new or planned call.
+The value is formatted as follows: [Textual String of Sample]::[Default Quantity];;
+For example, Cholecap 10mg::1;;Cholecap 20mg::2;;Cholecap 30mg::2</description>
+    <externalId>false</externalId>
+    <label>Sample Default</label>
+    <length>1000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

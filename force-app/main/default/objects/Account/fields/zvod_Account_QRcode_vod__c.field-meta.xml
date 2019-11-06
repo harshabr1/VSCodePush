@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zvod_Account_QRcode_vod__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Marker field for the QR code in the account page layout</description>
+    <externalId>false</externalId>
+    <label>zvod_Account_QRcode</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

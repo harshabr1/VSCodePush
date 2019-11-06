@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ID2_vod__c</fullName>
+    <description>The ID2_vod field acts as a secondary identifier to link Accounts to Sales Data via the Analytics application.  This ID should be leveraged in the case that a Physician has both distribution and script data loaded.</description>
+    <externalId>false</externalId>
+    <label>ID2</label>
+    <length>20</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

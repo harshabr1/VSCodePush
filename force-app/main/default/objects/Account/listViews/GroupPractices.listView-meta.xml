@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GroupPractices</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Practice_at_Hospital_vod__c</columns>
+    <columns>Practice_Near_Hospital_vod__c</columns>
+    <columns>Total_MDs_DOs__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Practice_vod</value>
+    </filters>
+    <label>Group Practices</label>
+</ListView>

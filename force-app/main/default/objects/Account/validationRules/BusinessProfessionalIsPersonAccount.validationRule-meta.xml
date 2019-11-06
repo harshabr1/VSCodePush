@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BusinessProfessionalIsPersonAccount</fullName>
+    <active>true</active>
+    <description>Business_Professional_Person_vod must be person account</description>
+    <errorConditionFormula>$RecordType.Name = &#39;Business_Professional_vod&#39; &amp;&amp; !Business_Professional_Person_vod__r.IsPersonAccount</errorConditionFormula>
+    <errorDisplayField>Business_Professional_Person_vod__c</errorDisplayField>
+    <errorMessage>This field must refer to a person account</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meeting_Brief</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <height>1200</height>
+    <linkType>sControl</linkType>
+    <masterLabel>Meeting Brief</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <scontrol>Call_Report_Meeting_Brief_vod</scontrol>
+</WebLink>

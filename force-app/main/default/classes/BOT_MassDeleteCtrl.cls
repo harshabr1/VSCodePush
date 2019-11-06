@@ -5,8 +5,6 @@ Created Date	: 09-JAN-2019
 Overview		: This class is written by BusinessOne Technologies Inc. It is a controller class for BOT_MassDelete Page.
 */
 public class BOT_MassDeleteCtrl {
-    
-    Integer intRecordCount = 0;								//To store the record count for a specified object
     Public Integer intAccountCount {get;set;}				//To store the Account records count
     Public Integer intAddressCount {get;set;}				//To store the Address records count
     Public Integer intBenefitDesignCount {get;set;}			//To store the Benefit design records count
@@ -27,14 +25,7 @@ public class BOT_MassDeleteCtrl {
     Public Boolean blnIncludeAccountAddress {get;set;}		//It indicates that Delete Addresses while deleting All records
     Public Boolean blnIncludeFormularyProduct {get;set;}	//It indicates that Delete Formulary Product while deleting All records
     Public Boolean blnIncludeCoveragePolicy {get;set;}		//It indicates that Delete Coverage Policy while deleting All records
-    Public Boolean blnRenderManageAccounts {get;set;}		//To display/hide the Manage Accounts section on the Visualforce page
-    Public Integer intAccountsToBeInactive {get;set;}		//It holds the number of Accounts to be inactive after completed of data refresh
-    Public Integer intAccountToBeDelete {get;set;}			//It holds the number of Accounts to be Delete after completed of data refresh
     Boolean blnIsDeleteAll = false;							//It will be true when the user opts for Delete All
-    //Set<ID> setAccountIds;								//To store the Account Ids which are inactive/deleted in PBB
-    //Set<ID> setAccountPlanAndCallIds;						//To store the Account Ids that are inactive/deleted in PBB and having associated Account plans or calls
-    //String queryString;									//To hold the SOQL query
-    //ID batchJobID;										//To store the batch job ID
     
     public BOT_MassDeleteCtrl() {
     	intAccountCount = [SELECT count() FROM Account WHERE BOT_Is_BOT_Data__c = true];
@@ -57,8 +48,6 @@ public class BOT_MassDeleteCtrl {
         blnIncludeIDNAccount = false;
         blnIncludePersonAccount = false;
         blnIsDeleteAll = false;
-        
-        //getInactiveAccountsCount();
     }
     
     //To delete Account records
@@ -154,6 +143,9 @@ public class BOT_MassDeleteCtrl {
         //To clear the previos data from the BOT_Maintenance_page_data custom settings object.
         BOT_MassDeleteEmailAlert.clearMaintenancePageData();
         
+        //Send an email to the Apex job's submitter notifying of job started.
+        BOT_MassDeleteEmailAlert.initialEmail();
+        
         deleteTheraClass();
         deleteDrugAccess();
         deleteSpecialtyProviderJO();
@@ -165,33 +157,29 @@ public class BOT_MassDeleteCtrl {
         if(blnIncludeCoveragePolicy == true)
         {
         	deleteCoveragePolicy();
-            //executeBatchJob('BOT_Coverage_Policy__c');    
         }
         
         if(blnIncludeFormularyProduct == true)
         {
         	deleteFormularyProduct();
-            //executeBatchJob('Formulary_Products_vod__c WHERE BOT_Is_BOT_Data__c = true');    
         }
         
         if(blnIncludeAccountAddress == true)
         {
         	deleteAddress();
-            //executeBatchJob('Address_vod__c WHERE Account_vod__r.BOT_Is_BOT_Data__c = true');    
         }
         
         if(blnIncludeAccount == true)
         {
         	deleteAccount();
-            //executeBatchJob('Account WHERE BOT_Is_BOT_Data__c = true');    
         }
-        //ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.WARNING, 'Deletion inprogress, It a may take maximum 10 Min to Complete. Don\'t refresh the page.'));
     }
     
     //Calling batch class to process the delete operation
     @testVisible void executeBatchJob(String strQueryString, String strObjectLabel)
     {
-    	String strExecuteQuery;			//To store the dynamic query
+        Integer intRecordCount = 0;		//To store the record count for a specified object
+        String strExecuteQuery;			//To store the dynamic query
         strExecuteQuery = 'SELECT count() FROM '+strQueryString;
         
         try {
@@ -215,7 +203,8 @@ public class BOT_MassDeleteCtrl {
                     BOT_MassDeleteEmailAlert.insertObjectDetails('Plan-Product Formulary JO', intProductFormularyCount);
                     BOT_MassDeleteEmailAlert.insertObjectDetails('Plan Product', intPlanProductCount);
                 }
-                //To create the current object details on BOT_Maintenance_page_data custom settings object.
+                //To create details on BOT_Maintenance_page_data custom settings object.
+                //Details contains object label and no of records are processing to delete
         		BOT_MassDeleteEmailAlert.insertObjectDetails(strObjectLabel, intRecordCount);
             }            
             
@@ -225,6 +214,6 @@ public class BOT_MassDeleteCtrl {
             //Calling the Batch Apex to delete the records
             BOT_MassDeleteBatch clsMassDeleteBatch = new BOT_MassDeleteBatch(strExecuteQuery, blnIsDeleteAll, intRecordCount, strObjectLabel);
         	Database.executeBatch(clsMassDeleteBatch);
-        }
+		}
     }
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BOT_CP_Form_Available__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True if Coverage Policy form is available with the Account Plan.</description>
+    <externalId>false</externalId>
+    <label>CP Form Available</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

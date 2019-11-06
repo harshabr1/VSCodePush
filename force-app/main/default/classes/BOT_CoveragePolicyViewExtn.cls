@@ -137,6 +137,7 @@ public class BOT_CoveragePolicyViewExtn
     	req.setHeader('Content-Encoding','gzip'); 
         req.setHeader('document-api-key',objConfigValues.BOT_SecretKey__c); 
     	req.setMethod('GET');
+        req.setTimeout(120000);
 		HttpResponse res = h.send(req);
 		system.debug('*** Response Body***'+res.getBody());
         BOT_CPFormResponse lstCPFormResponse = BOT_CPFormResponse.parse(res.getBody());

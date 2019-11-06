@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commercial_Patient_Days_1000__c</fullName>
+    <description>Commercial Patient Days.  Used for MCO and MCO Plan accounts</description>
+    <externalId>false</externalId>
+    <label>Commercial Patient Days/1000</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

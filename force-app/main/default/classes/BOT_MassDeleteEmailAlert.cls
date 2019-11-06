@@ -54,18 +54,15 @@ public class BOT_MassDeleteEmailAlert
         }
     }
     
-    //When user try to delete all objects data
-    //Send an email to the Apex job's submitter notifying of job completion.
-    public static void deleteAllEmailAlert(String strUserEmail, String strUserName)
+    //Create the email body when user try to delete all objects data
+    public static void deleteAllEmailAlert()
     {
-        Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
-        String[] toAddress = new String[] {strUserEmail};
-            
-            String emailBody = '<html><head><h3>Hi '+strUserName+'</h3><style>table, th, td {border: 1px solid black; border-collapse: collapse;}' +
-            'th, td {padding: 15px;}</style></head><body>' +
-            '<p><h4>Please find the following details:</h4></p>' +
-            '<table style="width:60%">' +
-            '<tr><th>Object Name</th><th>Total Records Processed</th><th>No of Success</th><th>No of Errors</th></tr>';
+    	String emailBody = '<html><head><h3>Hi '+ UserInfo.getName() +
+            			   ',</h3><style>table, th, td {border: 1px solid black; border-collapse: collapse;}' +
+            			   'th, td {padding: 15px;}</style></head><body>' +
+            			   '<p><h4>Please find the following details:</h4></p>' +
+            			   '<table style="width:60%">' +
+            			   '<tr><th>Object Name</th><th>Total Records Processed</th><th>No of Success</th><th>No of Errors</th></tr>';
         
         for(BOT_Maintenance_Page_Data__c objMaintenancePageData : [SELECT Id, Name, BOT_Total_Records__c, BOT_No_of_Success_Records__c, BOT_No_of_Errors__c FROM BOT_Maintenance_Page_Data__c ORDER BY Name])
         {
@@ -76,31 +73,47 @@ public class BOT_MassDeleteEmailAlert
         }
         emailBody = emailBody + '</table><br/><br/><h4>Thanks & Regards,<br/>BOT Support Team.</h4></body></html>';
         
-        mail.setToAddresses(toAddress);
-        mail.setSubject('Data Deletion process is completed');
-        mail.setHtmlBody(emailBody);
-        Messaging.SendEmailResult[] results = Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
+        //To send an email notification
+        sendEmail('Data Deletion process is completed', emailBody);
     }
     
-    //When user try to delete all a specified object data
-    //Send an email to the Apex job's submitter notifying of job completion.
-    public static void deleteSpecifiedEmailAlert(String strUserEmail, String strUserName, String strSObjectLabel, Integer intRecordCount, Integer intErrorRecordCount)
+    //Create the email body when user try to delete records from specified object data
+    public static void deleteSpecifiedEmailAlert(String strSObjectLabel, Integer intRecordCount, Integer intErrorRecordCount)
     {
         Integer intSuccessRecordCount = intRecordCount - intErrorRecordCount;
         
-        Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
-        String[] toAddress = new String[] {strUserEmail};
-            
-            String emailBody = '<html><head><h3>Hi '+strUserName+'</h3><style>table, th, td {border: 1px solid black; border-collapse: collapse;}' +
-            'th, td {padding: 15px;}</style></head><body>' +
-            '<p><h4>Please find the following details:</h4></p>' +
-            '<table style="width:60%">' +
-            '<tr><th>Object Name</th><th>Total Records Processed</th><th>No of Success</th><th>No of Errors</th></tr>' +
-            '<tr><td>'+strSObjectLabel+'</td><td>'+intRecordCount+'</td><td>'+intSuccessRecordCount+'</td>' +
-            '<td>'+intErrorRecordCount+'</td></tr></table><br/><br/><h4>Thanks & Regards,<br/>BOT Support Team.</h4></body></html>';
+        String emailBody = '<html><head><h3>Hi '+ UserInfo.getName() +
+            			   ',</h3><style>table, th, td {border: 1px solid black; border-collapse: collapse;}' +
+            			   'th, td {padding: 15px;}</style></head><body>' +
+            			   '<p><h4>Please find the following details:</h4></p>' +
+            			   '<table style="width:60%">' +
+            			   '<tr><th>Object Name</th><th>Total Records Processed</th><th>No of Success</th><th>No of Errors</th></tr>' +
+            			   '<tr><td>'+strSObjectLabel+'</td><td>'+intRecordCount+'</td><td>'+intSuccessRecordCount+'</td>' +
+            			   '<td>'+intErrorRecordCount+'</td></tr></table><br/><br/><h4>Thanks & Regards,<br/>BOT Support Team.</h4></body></html>';
         
+        //To send an email notification
+        sendEmail(strSObjectLabel + ' object data is deleted Successfully', emailBody);
+    }
+    
+    //Create the email body when delete process is initiated through the scheduler
+    public static void initialEmail()
+    {
+        String emailBody = '<html><head><h3>Hi '+ UserInfo.getName() +',</h3></head><body>' +
+            				'&nbsp&nbsp&nbsp&nbsp&nbsp It may take few munities to complete the process.' +
+            				' We will send you the confirmation email once it is done.<br/><br/><br/><br/>' +
+        					'<h4>Thanks & Regards,<br/>BOT Support Team.</h4></body></html>';
+        
+        //To send an email notification
+        sendEmail('Data Deletion process is initiated', emailBody);
+    }
+    
+    //Send an email to the Apex job's submitter notifying of job completion.
+    public static void sendEmail(String emailSubject, String emailBody)
+    {
+        Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
+        String[] toAddress = new String[] {UserInfo.getUserEmail()};
         mail.setToAddresses(toAddress);
-        mail.setSubject(strSObjectLabel + ' object data is deleted Successfully');
+        mail.setSubject(emailSubject + ' - ' + UserInfo.getUserName().substringAfterLast('.'));
         mail.setHtmlBody(emailBody);
         Messaging.SendEmailResult[] results = Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
     }

@@ -86,11 +86,8 @@ global class BOT_MassDeleteBatchFinish implements Database.Batchable<sObject>
             //If the status is completed
             if(intRecordCount == 0)
             {
-                //Query the AsyncApexJob object to retrieve the current job's information.
-   				AsyncApexJob apexJob = [SELECT CreatedBy.Email, CreatedBy.Name FROM AsyncApexJob WHERE Id =: BC.getJobId()];
-        	
                 //Send an email to the Apex job's submitter notifying of job completion.
-                BOT_MassDeleteEmailAlert.deleteAllEmailAlert(apexJob.CreatedBy.Email, apexJob.CreatedBy.Name);
+                BOT_MassDeleteEmailAlert.deleteAllEmailAlert();
             }
         }
     }

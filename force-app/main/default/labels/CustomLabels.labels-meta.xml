@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>BOT_NoDataAvailable</fullName>
+        <categories>Benefit design, Coverage policy, Drug Access</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Data Available</shortDescription>
+        <value>No data available for the selected plan.</value>
+    </labels>
+</CustomLabels>

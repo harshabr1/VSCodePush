@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BOT_Is_BOT_Data__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>It is created by BusinessOne Technologies. It indicates that record is created by BOT.</description>
+    <externalId>false</externalId>
+    <label>Is BOT Data</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

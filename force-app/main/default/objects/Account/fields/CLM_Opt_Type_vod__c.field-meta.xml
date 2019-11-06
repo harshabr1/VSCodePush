@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLM_Opt_Type_vod__c</fullName>
+    <description>Holds the CLM consent type for the Account. Used in CLM to drive the opt-in consent model.</description>
+    <externalId>false</externalId>
+    <label>CLM Opt Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Explicit_Opt_In_vod</fullName>
+                <default>false</default>
+                <label>Explicit_Opt_In_vod</label>
+            </value>
+            <value>
+                <fullName>Implicit_Opt_In_vod</fullName>
+                <default>false</default>
+                <label>Implicit_Opt_In_vod</label>
+            </value>
+            <value>
+                <fullName>Never_vod</fullName>
+                <default>false</default>
+                <label>Never_vod</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

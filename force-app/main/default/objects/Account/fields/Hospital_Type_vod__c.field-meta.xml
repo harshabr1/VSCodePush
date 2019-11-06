@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hospital_Type_vod__c</fullName>
+    <description>Identify a hospital is a General Practitioner or a Hospital.</description>
+    <externalId>false</externalId>
+    <label>Hospital Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GP</fullName>
+                <default>false</default>
+                <label>GP</label>
+            </value>
+            <value>
+                <fullName>HP</fullName>
+                <default>false</default>
+                <label>HP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

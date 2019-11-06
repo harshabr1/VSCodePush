@@ -1,36 +1,304 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <types>
-        <members>*</members>
-        <name>ApexClass</name>
+    <types>	
+		<members>BOT_AccountTriggerHandler</members>
+		<members>BOT_AddressTriggerHandler</members>
+		<members>BOT_BenefitDesignTriggerHandler</members>
+		<members>BOT_BenefitDesignLineTriggerHandler</members>
+		<members>BOT_ChildAccountTriggerHandler</members>
+		<members>BOT_CoveragePolicyTriggerHandler</members>
+		<members>BOT_DrugAccessTriggerHandler</members>
+		<members>BOT_PharmacyServicesTriggerHandler</members>
+		<members>BOT_PlanProductTriggerHandler</members>
+		<members>BOT_ProductFormularyTriggerHandler</members>
+		<members>BOT_SpecialtyProviderJoTriggerHandler</members>
+		<members>BOT_TheraClassTriggerHandler</members>
+		
+		<members>BOT_AccountTriggerHandlerTest</members>
+		<members>BOT_AddressTriggerHandlerTest</members>
+		<members>BOT_BenefitDesignTriggerHandlerTest</members>
+		<members>BOT_BenefitDesignLineTriggerHandlerTest</members>
+		<members>BOT_ChildAccountTriggerHandlerTest</members>
+		<members>BOT_CoveragePolicyTriggerHandlerTest</members>
+		<members>BOT_DrugAccessTriggerHandlerTest</members>
+		<members>BOT_PharmacyServicesTriggerHandlerTest</members>
+		<members>BOT_PlanProductTriggerHandlerTest</members>
+		<members>BOT_ProductFormularyTriggerHandlerTest</members>
+		<members>BOT_SPPJoTriggerHandlerTest</members>
+		<members>BOT_TheraClassTriggerHandlerTest</members>
+		
+		<members>BOT_AccountCoveragePolicyExtn</members>
+		<members>BOT_AccountDrugAccessExtn</members>
+		<members>BOT_AccountPharmacyServiceExtn</members>
+		<members>BOT_AccountPharmacyServicePBMExtn</members>
+		<members>BOT_AccountPlanBenefitDesignExtn</members>
+		<members>BOT_AccountPlanCoveragePolicyExtn</members>
+		<members>BOT_AccountPlanDrugAccessExtn</members>
+		<members>BOT_BenefitDesignLineViewExtn</members>
+		<members>BOT_CoveragePolicyViewExtn</members>
+		<members>BOT_MassDeleteCtrl</members>
+		<members>BOT_MassDeleteScheduler</members>
+		<members>BOT_MassDeleteEmailAlert</members>
+		<members>BOT_RefreshedDateDisplayExtn</members>
+		
+		<members>BOT_AccountCoveragePolicyExtnTest</members>
+		<members>BOT_AccountDrugAccessExtnTest</members>
+		<members>BOT_AccountPharmacyServiceExtnTest</members>
+		<members>BOT_AccountPlanBenefitDesignExtnTest</members>
+		<members>BOT_AccountPlanCoveragePolicyExtnTest</members>
+		<members>BOT_AccountPlanDrugAccessExtnTest</members>
+		<members>BOT_BenefitDesignLineViewExtnTest</members>
+		<members>BOT_CoveragePolicyViewExtnTest</members>
+		<members>BOT_MassDeleteCtrlTest</members>
+		
+		<members>BOT_TestDataFactory</members>
+		
+		<members>BOT_MassDeleteBatch</members>
+		<members>BOT_MassDeleteBatchFinish</members>
+		<members>BOT_CPFormResponse</members>
+		<members>BOT_CoveragePolicyCalloutMock</members>
+		<members>BOT_UpdateAffiliateAccounts</members>
+		<members>BOT_ManageInactiveAccounts</members>
+		<members>BOT_UpdateAffiliateAccountsTest</members>
+		<members>BOT_ManageInactiveAccData</members>
+		
+		<name>ApexClass</name>
+	</types>
+	<types>	
+		<members>BOT_DrugAccessComponent</members>
+		<members>BOT_CoveragePolicyComponent</members>
+		<name>ApexComponent</name>
+	</types>
+	<types>	
+		<members>BOT_AccountCoveragePolicy</members>
+		<members>BOT_AccountDrugAccess</members>
+		<members>BOT_AccountPharmacyService</members>
+		<members>BOT_AccountPharmacyServicePBM</members>
+		<members>BOT_AccountPlanBenefitDesign</members>
+		<members>BOT_AccountPlanCoveragePolicy</members>
+		<members>BOT_AccountPlanDrugAccess</members>
+		<members>BOT_BenefitDesignLineView</members>
+		<members>BOT_CoveragePolicyView</members>
+		<members>BOT_MassDelete</members>
+		<members>BOT_RefreshedDateDisplay</members>
+		<members>BOT_CPFormPDF</members>
+		<name>ApexPage</name>
+	</types>
+	<types>	
+		<members>BOT_AccountTrigger</members>
+		<members>BOT_AddressTrigger</members>
+		<members>BOT_BenefitDesignTrigger</members>
+		<members>BOT_BenefitDesignLineTrigger</members>
+		<members>BOT_ChildAccountTrigger</members>
+		<members>BOT_CoveragePolicyTrigger</members>
+		<members>BOT_DrugAccessTrigger</members>
+		<members>BOT_PharmacyServicesTrigger</members>
+		<members>BOT_PlanProductTrigger</members>
+		<members>BOT_ProductFormularyTrigger</members>
+		<members>BOT_SpecialtyProviderJoTrigger</members>
+		<members>BOT_TheraClassTrigger</members>
+		<name>ApexTrigger</name>
+	</types>
+	<types>
+        <members>Account.BOT_Entity_Id__c</members>
+		<members>Account.BOT_Entity_Level__c</members>
+		<members>Account.BOT_Parent_Entity_ID__c</members>
+		<members>Account.BOT_Is_Active__c</members>
+		<members>Account.BOT_Is_BOT_Data__c</members>
+		<members>Account.BOT_Annual_Net_Operating_Revenue__c</members>
+		<members>Account.BOT_Births__c</members>
+		<members>Account.BOT_Emergency_Care_Visits__c</members>
+		<members>Account.BOT_Group_Purchasing_Organization__c</members>
+		<members>Account.BOT_Inpatient_Hospital_Admission__c</members>
+		<members>Account.BOT_Licensed_Staffed_Beds__c</members>
+		<members>Account.BOT_Outpatient_Care_Centers__c</members>
+		<members>Account.BOT_Outpatient_Hospital_Admission__c</members>
+		<members>Account.BOT_Total_No_of_Employees__c</members>
+		<members>Account.BOT_Total_No_of_Hospitals__c</members>
+		<members>Account.BOT_Total_No_of_Physicians__c</members>
+		<members>Account.BOT_ACO_Type__c</members>
+		<members>Account.BOT_ACO_Lives_Commercial__c</members>
+		<members>Account.BOT_ACO_Lives_Medicare__c</members>
+		<members>Account.BOT_ACO_IDN__c</members>
+		<members>Account.BOT_ACO_MCO__c</members>
+		<members>Account.BOT_Hospital_IDN__c</members>
+		<members>Account.BOT_Is_Parent__c</members>
+		<members>Account.BOT_Plan_Lives_Rx__c</members>
+		<members>Account.BOT_Suffix1__c</members>
+		<members>Account.BOT_Person_ID__c</members>
+		<members>Account.Suffix_vod__c</members>
+		<members>Account.Account_Type__c</members>
+		<members>Account.BOT_Refresh_Date__c</members>
+		
+		<members>Benefit_Design_vod__c.BOT_Entity_ID__c</members>
+		<members>Benefit_Design_vod__c.BOT_Formulary_Lives_Med__c</members>
+		<members>Benefit_Design_vod__c.BOT_Formulary_Name__c</members>
+		<members>Benefit_Design_vod__c.BOT_Is_BOT_Data__c</members>
+		<members>Benefit_Design_vod__c.BOT_Benefit_Design_ID__c</members>
+		<members>Benefit_Design_vod__c.Type_vod__c</members>
+		
+		<members>Address_vod__c.BOT_Entity_ID__c</members>
+		<members>Address_vod__c.BOT_Is_BOT_Data__c</members>
+		<members>Address_vod__c.BOT_Person_ID__c</members>
+		
+		<members>Benefit_Design_Line_vod__c.BOT_Benefit_Design__c</members>
+		<members>Benefit_Design_Line_vod__c.BOT_Benefit_Design_ID__c</members>
+		<members>Benefit_Design_Line_vod__c.BOT_Formulary_Product_ID__c</members>
+		<members>Benefit_Design_Line_vod__c.BOT_Market__c</members>
+		<members>Benefit_Design_Line_vod__c.BOT_Is_BOT_Data__c</members>
+		<members>Benefit_Design_Line_vod__c.Restrictions_vod__c</members>
+		<members>Benefit_Design_Line_vod__c.Restrictions_Source_vod__c</members>
+		<members>Benefit_Design_Line_vod__c.Status_vod__c</members>
+		<members>Benefit_Design_Line_vod__c.Status_Source_vod__c</members>
+		<members>Benefit_Design_Line_vod__c.Type_vod__c</members>
+		<members>Benefit_Design_Line_vod__c.Competitor_vod__c</members>
+		
+		<members>Child_Account_vod__c.BOT_Parent_Account_ID__c</members>
+		<members>Child_Account_vod__c.BOT_Affiliate_Account_ID__c</members>
+		<members>Child_Account_vod__c.BOT_Account_Type__c</members>
+		<members>Child_Account_vod__c.BOT_Title__c</members>
+		<members>Child_Account_vod__c.BOT_Person_ID__c</members>
+		
+		<members>Formulary_Products_vod__c.BOT_Is_BOT_Data__c</members>
+		<members>Formulary_Products_vod__c.BOT_Formulary_Product_ID__c</members>
+		<members>Formulary_Products_vod__c.Market_vod__c</members>
+		
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>BOT_NoDataAvailable</members>
+		<name>CustomLabel</name>		
     </types>
-    <types>
-        <members>*</members>
-        <name>ApexComponent</name>
+	<types>	
+		<members>BOT_Plan_Product__c</members>
+		<members>BOT_Specialty_Provider_JO__c</members>
+		<members>BOT_Pharmacy_Service__c</members>
+		<members>BOT_Drug_Access__c</members>
+		<members>BOT_Thera_Class__c</members>
+		<members>BOT_Coverage_Policy__c</members>
+		<members>BOT_Data_Refresh_Date__c</members>
+		<members>BOT_Product_Formulary_JO__c</members>
+		<members>BOT_Error_Tracking_on_Mass_Delete__c</members>
+		<members>BOT_Maintenance_Page_Data__c</members>
+		<members>BOT_Inactive_Account__c</members>
+		<members>BOT_Configuration_Value__mdt</members>
+		<members>BOT_PA_CP_From_CofigValues__mdt</members>
+		<name>CustomObject</name>
+	</types>
+	<types>	
+		<members>BOT_Configuration_Value.BOT_Default_Pharmacy_Service</members>
+		<members>BOT_Configuration_Value.BOT_Default_Market</members>
+		<members>BOT_Configuration_Value.BOT_Logo_URL</members>
+		<members>BOT_PA_CP_From_CofigValues.Config_Values</members>
+		<name>CustomMetadata</name>
+	</types>
+	<types>
+		<members>BOT_Help_Manual</members>
+		<name>CustomPageWebLink</name>
+	</types>
+	<types>	
+		<members>Mass_Delete</members>
+		<name>CustomTab</name>
+	</types>
+	<types>
+		<members>BOT_Custom_Dashboards</members>
+		<members>BOT_Custom_Dashboards/BOT_Call_Activities</members>
+		<name>Dashboard</name>
+	</types>
+	<types>
+		<members>images/TOB_Logo.png</members>
+		<members>images/BusinessOne_Logo.png</members>
+		<name>Document</name>
+	</types>
+	<types>  
+        <members>BOT_Custom_Profile_Users</members>  
+        <name>Group</name>  
+    </types>  
+	<types>
+		<members>BOT_RefreshedDateDisplay</members>
+		<members>BusinessOne CRM Connector</members>	
+		<name>HomePageComponent</name>
+	</types>
+	<types>
+		<members>BOT_Custom Home Page</members>
+		<name>HomePageLayout</name>
+	</types>
+	<types>	
+		<members>Account-BOT Commercial</members>
+		<members>Account-BOT Employer</members>
+		<members>Account-BOT PBM</members>
+		<members>Account-BOT Specialty Provider</members>
+		<members>Account-BOT State Medicaid</members>
+		<members>Account-BOT Tricare</members>
+		<members>Account-BOT VA</members>
+		<members>Account-BOT IDN</members>
+		<members>Account-BOT ACO</members>
+		<members>Account-BOT Hospital</members>
+		<members>PersonAccount-BOT Person Account</members>
+		<members>Address_vod__c-BOT_Address Layout</members>
+		<members>Benefit_Design_Line_vod__c-BOT_Benefit Design Line Layout</members>
+		<members>Formulary_Products_vod__c-BOT_Formulary Product Layout</members>
+		<members>Benefit_Design_vod__c-BOT_Benefit Design Layout</members>
+		<members>Account_Tactic_vod__c-BOT Account Tactic Layout</members>
+		<members>BOT_Plan_Product__c-Plan Product Layout</members>
+		<members>BOT_Pharmacy_Service__c-Pharmacy Service Layout</members>
+		<members>BOT_Coverage_Policy__c-Coverage Policy Layout</members>
+		<members>Call2_vod__c-BOT Call</members>
+		<members>Call2_Discussion_vod__c-BOT Call Discussion</members>
+		<members>Account_Plan_vod__c-Account Plan Layout</members>
+		<name>Layout</name>
+	</types>
+	<types>	
+		<members>BOT_Enable_Mass_delete</members>
+		<name>PermissionSet</name>
+	</types>
+
+	<types>	
+		<members>Account.BOT_Commercial</members>
+		<members>Account.BOT_Employer</members>
+		<members>Account.BOT_PBM</members>
+		<members>Account.BOT_Specialty_Provider</members>
+		<members>Account.BOT_State_Medicaid</members>
+		<members>Account.BOT_Tricare</members>
+		<members>Account.BOT_VA</members>
+		<members>Account.BOT_ACO</members>
+		<members>Account.BOT_IDN</members>
+		<members>Account.BOT_Hospital</members>
+		<members>Account.BOT_MCO</members>
+		<members>Account.BOT_Stand_Alone_HIX</members>
+		<members>Account.BOT_Stand_Alone_Medicare</members>
+		<members>PersonAccount.BOT_Person_Account</members>
+		<members>Address_vod__c.BOT_Address</members>
+		<members>Benefit_Design_Line_vod__c.BOT_Benefit_Design_Line</members>
+		<members>Formulary_Products_vod__c.BOT_Formulary_Product</members>
+		<members>Benefit_Design_vod__c.BOT_Benefit_Design</members>
+		<members>Account_Tactic_vod__c.BOT_Account_tactic</members>
+		<members>Call2_vod__c.BOT_Call</members>
+		<members>Call2_Discussion_vod__c.BOT_Call_Discussion</members>
+		<name>RecordType</name>
+	</types>
+	<types>
+		<members>BOT_Custom_Reports</members>
+		<members>BOT_Custom_Reports/BOT_Drug_Access_by_Payer</members>
+		<members>BOT_Custom_Reports/Call_Activities_by_Account</members>
+		<members>BOT_Custom_Reports/Call_Activities_by_Product</members>
+		<members>BOT_Custom_Reports/Call_Activities_by_Users</members>
+		<name>Report</name>
+	</types>
+	<types>
+        <members>Account.BOT_AccountSharingToUsers</members> 
+        <name>SharingCriteriaRule</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>ApexPage</name>
+	<types>
+		<members>Benefit_Design_vod__c</members>
+		<members>BOT_Plan_Product__c</members>
+		<members>BOT_Coverage_Policy__c</members>
+		<name>Workflow</name>
+	</types>
+	<types>
+        <members>BOT_ManageInactiveAccounts</members>
+        <name>Flow</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>ApexTestSuite</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>AuraDefinitionBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>LightningComponentBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>StaticResource</name>
-    </types>
-    <version>46.0</version>
+
+	<version>45.0</version>
 </Package>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BOT_Include_to_Delete_All__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>It indicates that the object should include under delete all or not.</description>
+    <externalId>false</externalId>
+    <label>Include to Delete All</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

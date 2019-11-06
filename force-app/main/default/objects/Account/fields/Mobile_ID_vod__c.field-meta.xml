@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mobile_ID_vod__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>System field used by mobile products to aid synchronization.</description>
+    <externalId>true</externalId>
+    <label>Mobile ID</label>
+    <length>100</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

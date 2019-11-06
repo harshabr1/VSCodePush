@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PrimaryParentIsPersonAccount</fullName>
+    <active>true</active>
+    <description>Primary parent is a personal account.</description>
+    <errorConditionFormula>Primary_Parent_vod__r.IsPersonAccount</errorConditionFormula>
+    <errorDisplayField>Primary_Parent_vod__c</errorDisplayField>
+    <errorMessage>The primary parent must be a business account.</errorMessage>
+</ValidationRule>

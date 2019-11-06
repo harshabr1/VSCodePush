@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Formatted_Name_vod__c</fullName>
+    <description>This formula field is used to display a well formatted person account name in (lastname, firstname suffix) format.</description>
+    <externalId>false</externalId>
+    <formula>IF( IsPersonAccount , 
+IF( AND(RecordType.DeveloperName == &#39;Business_Professional_vod&#39;, NOT(ISBLANK(Primary_Parent_vod__r.Name))), LastName &amp; &quot;, &quot; &amp; FirstName &amp; &quot; (&quot; &amp;  Primary_Parent_vod__r.Name &amp; &quot;)&quot; ,
+LastName &amp; &quot;, &quot; &amp; FirstName &amp; IF(ISNULL(Suffix_vod__c), &quot;&quot;, &quot; &quot;&amp;Suffix_vod__c)),
+Name)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Formatted Name</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

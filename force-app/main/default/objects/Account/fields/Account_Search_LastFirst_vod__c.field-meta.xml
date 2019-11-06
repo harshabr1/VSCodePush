@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Search_LastFirst_vod__c</fullName>
+    <description>If Person account, set the field value as lastname&amp;firstname no space</description>
+    <externalId>false</externalId>
+    <formula>IF( IsPersonAccount ,SUBSTITUTE( LastName,&quot; &quot;,&quot;&quot;) &amp; SUBSTITUTE(FirstName,&quot; &quot;,&quot;&quot;),Name )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Search LastFirst</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

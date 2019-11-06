@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DashboardFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>BOT_Custom Dashboards</name>
+    <publicFolderAccess>ReadWrite</publicFolderAccess>
+    <sharedTo>
+        <role>CEO</role>
+        <role>DirectorMedicalScience</role>
+        <role>DistrictManager</role>
+        <role>MedicalScientificLiaison</role>
+        <role>NationalAccountsDirector</role>
+        <role>RegionManager</role>
+        <role>RegionalAccountsExecutive</role>
+        <role>SalesRepresentative</role>
+        <role>VPManagedMarkets</role>
+        <role>VPMedicalCommunications</role>
+        <role>VPofSales</role>
+    </sharedTo>
+</DashboardFolder>

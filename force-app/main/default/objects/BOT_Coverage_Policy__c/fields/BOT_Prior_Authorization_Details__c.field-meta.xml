@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BOT_Prior_Authorization_Details__c</fullName>
+    <description>It is a subsection of Prior Authorization</description>
+    <externalId>false</externalId>
+    <label>Prior Authorization Details</label>
+    <length>250</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

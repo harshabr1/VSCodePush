@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Market_vod__c</fullName>
+    <description>Market (such as Cholesterol Reducer) that this product belongs to.  This field is used as a filter in the formulary viewer.</description>
+    <externalId>false</externalId>
+    <label>Market</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Immunology</fullName>
+                <default>false</default>
+                <label>Immunology</label>
+            </value>
+            <value>
+                <fullName>Multiple Sclerosis</fullName>
+                <default>false</default>
+                <label>Multiple Sclerosis</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

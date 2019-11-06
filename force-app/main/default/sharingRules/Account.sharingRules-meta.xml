@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>BOT_AccountSharingToUsers</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Sharing the Account records which are created by BOT with the users</description>
+        <label>BOT_AccountSharingToUsers</label>
+        <sharedTo>
+            <group>BOT_Custom_Profile_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>BOT_Is_BOT_Data__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

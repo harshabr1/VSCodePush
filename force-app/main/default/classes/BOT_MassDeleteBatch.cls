@@ -80,11 +80,8 @@ global class BOT_MassDeleteBatch implements Database.Batchable<sobject>, Databas
         //If the user try to delete the data from a specified object
        	else if(blnIsDeleteAll == false)
         {
-            //Query the AsyncApexJob object to retrieve the current job's information.
-            AsyncApexJob apexJob = [SELECT CreatedBy.Email, CreatedBy.Name FROM AsyncApexJob WHERE Id =: BC.getJobId()];
-        	
             //Send an email to the Apex job's submitter notifying of job completion.
-            BOT_MassDeleteEmailAlert.deleteSpecifiedEmailAlert(apexJob.CreatedBy.Email, apexJob.CreatedBy.Name, strSObjectLabel, intRecordCount, intErrorRecordCount);
+            BOT_MassDeleteEmailAlert.deleteSpecifiedEmailAlert(strSObjectLabel, intRecordCount, intErrorRecordCount);
 		}
         
         //If the user try to delete the data from all objects
@@ -118,11 +115,8 @@ global class BOT_MassDeleteBatch implements Database.Batchable<sobject>, Databas
             //If the status is completed
             if(intRecordCount == 0)
             {
-            	//Query the AsyncApexJob object to retrieve the current job's information.
-   				AsyncApexJob apexJob = [SELECT CreatedBy.Email, CreatedBy.Name FROM AsyncApexJob WHERE Id =: BC.getJobId()];
-        	
-                //Send an email to the Apex job's submitter notifying of job completion.
-                BOT_MassDeleteEmailAlert.deleteAllEmailAlert(apexJob.CreatedBy.Email, apexJob.CreatedBy.Name);
+            	//Send an email to the Apex job's submitter notifying of job completion.
+                BOT_MassDeleteEmailAlert.deleteAllEmailAlert();
             }
     	}
     }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Key_Medical_Insight_vod</fullName>
+    <availability>online</availability>
+    <description>Create a Key Medical Insight based on an Account.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>New Key Medical Insight</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/Medical_Insight_Edit_vod?accountId={!Account.Id}</url>
+</WebLink>

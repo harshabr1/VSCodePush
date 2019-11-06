@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory_Test_vod__c</fullName>
+    <description>Territory test field that contains a semicolon separated list of territories. This field is normally filled in using the VoD territory utilities page and is used to determine what the account/territory mappings will be.</description>
+    <externalId>false</externalId>
+    <label>Territory Test VoD</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

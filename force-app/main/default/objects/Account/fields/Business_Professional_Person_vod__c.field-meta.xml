@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Professional_Person_vod__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Link to the stand-alone Person Account record that the Business_Professional_vod is associated to.  Lookup should only allow a Person Account to be selected.
+�</description>
+    <externalId>false</externalId>
+    <label>Business Professional Person</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Accounts (Business Professional Person)</relationshipLabel>
+    <relationshipName>Business_Professional_Person_vod</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Color_vod__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT( IsPersonAccount ),&#39;Green&#39;,IF( ISPICKVAL(Gender_vod__c,&#39;F&#39;),&#39;Red&#39;,IF(ISPICKVAL(Gender_vod__c,&#39;M&#39;),&#39;Blue&#39;,&#39;Clear&#39;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Color</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

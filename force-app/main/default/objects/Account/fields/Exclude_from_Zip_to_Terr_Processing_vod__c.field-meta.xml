@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exclude_from_Zip_to_Terr_Processing_vod__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Territories_vod field will not be overwritten by Zip to Terr processing if this is checked</description>
+    <externalId>false</externalId>
+    <label>Exclude from Zip to Terr Processing</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

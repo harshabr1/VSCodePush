@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Cobrowse_vod</fullName>
+    <availability>online</availability>
+    <description>Select and start a CoBrowse presentation</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Start CoBrowse</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/Cobrowse_vod?acctId={!Account.Id}&amp;accountName={!Account.Name}</url>
+</WebLink>

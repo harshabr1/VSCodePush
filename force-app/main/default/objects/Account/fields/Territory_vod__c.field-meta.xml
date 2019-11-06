@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory_vod__c</fullName>
+    <description>Stores the territories associated with this account in a semicolon separated format.  Salesforce.com territory rules later run on this field to actually assign territories.  A leading and trailing semicolon must be contained within this field.  Also, no spaces should be included in the text string. The following is an example of a valid value for this field: &quot;;TERR1;TERR2;TERR3;&quot;</description>
+    <externalId>false</externalId>
+    <label>Territory VoD</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

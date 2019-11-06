@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BOT_Benefit_Design_Line</fullName>
+    <active>true</active>
+    <description>It is created by BusinessOne Technologies Inc and used to store BOT Benefit design records with drugs.</description>
+    <label>BOT_Benefit Design Line</label>
+    <picklistValues>
+        <picklist>Restrictions_Source_vod__c</picklist>
+        <values>
+            <fullName>AL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ST</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Restrictions_vod__c</picklist>
+        <values>
+            <fullName>AL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ST</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status_Source_vod__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved with Restrictions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Formulary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Formulary %2F Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Formulary %2F Higher Copay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Formulary %2F Not Reimbursed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Formulary %2F Prior Authorization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Formulary %2F Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Preferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Listed %2F Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Listed %2F Higher Copay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Listed %2F Not Reimbursed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Listed %2F Prior Authorization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Listed %2F Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Reimbursed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Preferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prior Authorization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unavailable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status_vod__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved with Restrictions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Formulary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Formulary %2F Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Formulary %2F Higher Copay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Formulary %2F Not Reimbursed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Formulary %2F Prior Authorization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Formulary %2F Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Preferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Listed %2F Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Listed %2F Higher Copay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Listed %2F Not Reimbursed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Listed %2F Prior Authorization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Listed %2F Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Reimbursed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Preferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prior Authorization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unavailable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_vod__c</picklist>
+        <values>
+            <fullName>Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medicaid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medicare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

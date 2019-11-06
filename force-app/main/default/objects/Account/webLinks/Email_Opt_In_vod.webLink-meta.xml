@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Opt_In_vod</fullName>
+    <availability>online</availability>
+    <description>Email_Opt_In_vod</description>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Email Opt In</masterLabel>
+    <openType>sidebar</openType>
+    <page>Email_Opt_In_vod</page>
+    <protected>false</protected>
+</WebLink>

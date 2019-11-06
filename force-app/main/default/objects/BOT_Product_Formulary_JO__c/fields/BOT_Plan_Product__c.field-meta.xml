@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BOT_Plan_Product__c</fullName>
+    <description>Master-Detail relationship to Plan product object</description>
+    <externalId>false</externalId>
+    <label>Plan Product</label>
+    <referenceTo>BOT_Plan_Product__c</referenceTo>
+    <relationshipLabel>Plan Formulary</relationshipLabel>
+    <relationshipName>Plan_Product</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

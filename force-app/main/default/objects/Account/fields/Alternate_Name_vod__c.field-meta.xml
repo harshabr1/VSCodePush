@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alternate_Name_vod__c</fullName>
+    <description>Alternate name of one account used in iRep to show an alpha-bar.</description>
+    <externalId>false</externalId>
+    <label>Alternate Name</label>
+    <length>100</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

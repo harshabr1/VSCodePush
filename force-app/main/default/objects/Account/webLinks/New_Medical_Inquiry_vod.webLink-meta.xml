@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Medical_Inquiry_vod</fullName>
+    <availability>online</availability>
+    <description>Create a new Medical Inquiry from an Account.</description>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>New Medical Inquiry</masterLabel>
+    <openType>noSidebar</openType>
+    <page>Medical_Inquiry_From_Account_vod</page>
+    <protected>false</protected>
+</WebLink>

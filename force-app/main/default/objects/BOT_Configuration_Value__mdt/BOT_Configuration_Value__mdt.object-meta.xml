@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This object is created by BusinessOne technologies Inc. It is used to store the configuration values like the default market, default pharmacy service, Endpoint URL etc</description>
+    <label>BOT_Configuration Value</label>
+    <pluralLabel>BOT_Configuration Values</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regional_Strategy__c</fullName>
+    <description>Regional Strategy of this account.  Used by MCO accounts.</description>
+    <externalId>false</externalId>
+    <label>Regional Strategy</label>
+    <length>32000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Master_Status_vod__c</fullName>
+    <description>Corresponds to the validation status of a record in the customer master. This field should not be modified.</description>
+    <externalId>false</externalId>
+    <label>Customer Master Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Staging_vod</fullName>
+                <default>false</default>
+                <label>Staging_vod</label>
+            </value>
+            <value>
+                <fullName>Inactive_vod</fullName>
+                <default>false</default>
+                <label>Inactive_vod</label>
+            </value>
+            <value>
+                <fullName>Valid_vod</fullName>
+                <default>true</default>
+                <label>Valid_vod</label>
+            </value>
+            <value>
+                <fullName>Under_Review_vod</fullName>
+                <default>false</default>
+                <label>Under_Review_vod</label>
+            </value>
+            <value>
+                <fullName>Rejected_vod</fullName>
+                <default>false</default>
+                <label>Rejected_vod</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

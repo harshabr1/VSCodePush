@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>Used to redirect to Help Manual</description>
+    <displayType>link</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Help Manual</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>window.open(&quot;/servlet/servlet.FileDownload?file=015m0000001oQIB&quot;);</url>
+</CustomPageWebLink>

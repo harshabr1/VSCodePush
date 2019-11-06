@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BOT_Account_tactic</fullName>
+    <active>true</active>
+    <description>Used to store the account tactics created by Managed market users.</description>
+    <label>BOT Account tactic</label>
+</RecordType>

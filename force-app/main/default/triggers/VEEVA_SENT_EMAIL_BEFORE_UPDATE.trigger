@@ -22,7 +22,13 @@ trigger VEEVA_SENT_EMAIL_BEFORE_UPDATE on Sent_Email_vod__c (before update) {
         //clear message when status is set to Sent or Delivered
         if(newEmail.Status_vod__c == EmailStatus.Sent_vod.name() || newEmail.Status_vod__c == EmailStatus.Delivered_vod.name()) {
             newEmail.Failure_Msg_vod__c = null;
-        }      
+        }
+        //do not overwrite sent date if value already exists
+        DateTime newSentDate = newEmail.Email_Sent_Date_vod__c;
+        Datetime oldSentDate = Trigger.oldMap.get(newEmail.Id).Email_Sent_Date_vod__c;
+        if (newSentDate == null && oldSentDate != null) {
+            newEmail.Email_Sent_Date_vod__c = oldSentDate;
+        }
     }
 
 }

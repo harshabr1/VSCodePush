@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Inventory_Monitoring_Type_vod__c</fullName>
+    <description>Defines which Inventory Monitoring Type should open by default when creating a new IM.</description>
+    <externalId>false</externalId>
+    <label>Default Inventory Monitoring Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None_vod</fullName>
+                <default>false</default>
+                <label>None_vod</label>
+            </value>
+            <value>
+                <fullName>Inventory_Monitoring_vod</fullName>
+                <default>false</default>
+                <label>Inventory_Monitoring_vod</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

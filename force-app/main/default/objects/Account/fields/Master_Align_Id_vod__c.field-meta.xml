@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Master_Align_Id_vod__c</fullName>
+    <description>Globally unique identifier for this object. This Id is managed by Align</description>
+    <externalId>false</externalId>
+    <label>Master Align Id</label>
+    <length>36</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

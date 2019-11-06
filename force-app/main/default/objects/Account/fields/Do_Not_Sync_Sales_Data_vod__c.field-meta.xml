@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Do_Not_Sync_Sales_Data_vod__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>The Do Not Sync Sales Data field is used to determine if the Analytics Sales Data should be synced to the VMobile Tablet Edition.  If this field is checked, then the Sales Data will not be synced.</description>
+    <externalId>false</externalId>
+    <label>Do Not Sync Sales Data</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

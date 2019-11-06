@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Group_vod__c</fullName>
+    <description>When populated, marks this account as a member of the designated group of accounts. The Account Group name must be an exact literal match across all accounts that are members of this group.</description>
+    <externalId>false</externalId>
+    <label>Account Group</label>
+    <length>80</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

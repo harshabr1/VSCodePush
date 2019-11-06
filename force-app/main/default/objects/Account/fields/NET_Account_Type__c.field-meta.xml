@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NET_Account_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Network Account Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pharmacy, Long Term Care Pharmacy Provider</fullName>
+                <default>false</default>
+                <label>Pharmacy, Long Term Care Pharmacy Provider</label>
+            </value>
+            <value>
+                <fullName>Medical School, Paramedic/EMT</fullName>
+                <default>false</default>
+                <label>Medical School, Paramedic/EMT</label>
+            </value>
+            <value>
+                <fullName>Residency Program, Residency</fullName>
+                <default>false</default>
+                <label>Residency Program, Residency</label>
+            </value>
+            <value>
+                <fullName>Organization, HMO/Insurance</fullName>
+                <default>false</default>
+                <label>Organization, HMO/Insurance</label>
+            </value>
+            <value>
+                <fullName>Organization, Respiratory Therapy Group</fullName>
+                <default>false</default>
+                <label>Organization, Respiratory Therapy Group</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Assistance Programs</fullName>
+                <default>false</default>
+                <label>Managed Care, Assistance Programs</label>
+            </value>
+            <value>
+                <fullName>Organization, Hospital Based NH/LTC</fullName>
+                <default>false</default>
+                <label>Organization, Hospital Based NH/LTC</label>
+            </value>
+            <value>
+                <fullName>Organization, Animal Welfare/Control</fullName>
+                <default>false</default>
+                <label>Organization, Animal Welfare/Control</label>
+            </value>
+            <value>
+                <fullName>Medical School, Veterinary</fullName>
+                <default>false</default>
+                <label>Medical School, Veterinary</label>
+            </value>
+            <value>
+                <fullName>Organization, Group Purchasing Organization</fullName>
+                <default>false</default>
+                <label>Organization, Group Purchasing Organization</label>
+            </value>
+            <value>
+                <fullName>Medical School, Optometric</fullName>
+                <default>false</default>
+                <label>Medical School, Optometric</label>
+            </value>
+            <value>
+                <fullName>Organization, Clinic</fullName>
+                <default>false</default>
+                <label>Organization, Clinic</label>
+            </value>
+            <value>
+                <fullName>Medical School, Other</fullName>
+                <default>false</default>
+                <label>Medical School, Other</label>
+            </value>
+            <value>
+                <fullName>Pharmacy, Compounding Pharmacy</fullName>
+                <default>false</default>
+                <label>Pharmacy, Compounding Pharmacy</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Physician Hospital Org</fullName>
+                <default>false</default>
+                <label>Managed Care, Physician Hospital Org</label>
+            </value>
+            <value>
+                <fullName>Organization, Cystic Fibrosis Center</fullName>
+                <default>false</default>
+                <label>Organization, Cystic Fibrosis Center</label>
+            </value>
+            <value>
+                <fullName>Organization, Prison</fullName>
+                <default>false</default>
+                <label>Organization, Prison</label>
+            </value>
+            <value>
+                <fullName>Managed Care, PPO</fullName>
+                <default>false</default>
+                <label>Managed Care, PPO</label>
+            </value>
+            <value>
+                <fullName>Prison, Other</fullName>
+                <default>false</default>
+                <label>Prison, Other</label>
+            </value>
+            <value>
+                <fullName>Pharmacy, Hospital</fullName>
+                <default>false</default>
+                <label>Pharmacy, Hospital</label>
+            </value>
+            <value>
+                <fullName>Organization, Alternative Medicine Group</fullName>
+                <default>false</default>
+                <label>Organization, Alternative Medicine Group</label>
+            </value>
+            <value>
+                <fullName>Medical Board, Corporate Office</fullName>
+                <default>false</default>
+                <label>Medical Board, Corporate Office</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Other Managed Care</fullName>
+                <default>false</default>
+                <label>Managed Care, Other Managed Care</label>
+            </value>
+            <value>
+                <fullName>Organization, Corporate (no public access)</fullName>
+                <default>false</default>
+                <label>Organization, Corporate (no public access)</label>
+            </value>
+            <value>
+                <fullName>Home Health Care Agencies, Other</fullName>
+                <default>false</default>
+                <label>Home Health Care Agencies, Other</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Physician Hospital Organization</fullName>
+                <default>false</default>
+                <label>Managed Care, Physician Hospital Organization</label>
+            </value>
+            <value>
+                <fullName>Pharmacy, Corporate Office</fullName>
+                <default>false</default>
+                <label>Pharmacy, Corporate Office</label>
+            </value>
+            <value>
+                <fullName>Organization, Government</fullName>
+                <default>false</default>
+                <label>Organization, Government</label>
+            </value>
+            <value>
+                <fullName>Organization, Occupational Therapy Group</fullName>
+                <default>false</default>
+                <label>Organization, Occupational Therapy Group</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Management Service Org</fullName>
+                <default>false</default>
+                <label>Managed Care, Management Service Org</label>
+            </value>
+            <value>
+                <fullName>Organization, Dept at Hospital</fullName>
+                <default>false</default>
+                <label>Organization, Dept at Hospital</label>
+            </value>
+            <value>
+                <fullName>Pharmacy, Pharmacy Benefit Mgmt Org</fullName>
+                <default>false</default>
+                <label>Pharmacy, Pharmacy Benefit Mgmt Org</label>
+            </value>
+            <value>
+                <fullName>Prison, County</fullName>
+                <default>false</default>
+                <label>Prison, County</label>
+            </value>
+            <value>
+                <fullName>Prison, State</fullName>
+                <default>false</default>
+                <label>Prison, State</label>
+            </value>
+            <value>
+                <fullName>Organization, Veterinary Hospital</fullName>
+                <default>false</default>
+                <label>Organization, Veterinary Hospital</label>
+            </value>
+            <value>
+                <fullName>Organization, Other Org</fullName>
+                <default>false</default>
+                <label>Organization, Other Org</label>
+            </value>
+            <value>
+                <fullName>Non Healthcare Provider, General</fullName>
+                <default>false</default>
+                <label>Non Healthcare Provider, General</label>
+            </value>
+            <value>
+                <fullName>Medical School, Corporate Office</fullName>
+                <default>false</default>
+                <label>Medical School, Corporate Office</label>
+            </value>
+            <value>
+                <fullName>Organization, Independent Medical Billing Services</fullName>
+                <default>false</default>
+                <label>Organization, Independent Medical Billing Services</label>
+            </value>
+            <value>
+                <fullName>Medical Board, General</fullName>
+                <default>false</default>
+                <label>Medical Board, General</label>
+            </value>
+            <value>
+                <fullName>Healthcare Manufacturer, Non Healthcare</fullName>
+                <default>false</default>
+                <label>Healthcare Manufacturer, Non Healthcare</label>
+            </value>
+            <value>
+                <fullName>Medical School, Naturopathic</fullName>
+                <default>false</default>
+                <label>Medical School, Naturopathic</label>
+            </value>
+            <value>
+                <fullName>Home Health Care Agencies, General</fullName>
+                <default>false</default>
+                <label>Home Health Care Agencies, General</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Exclusive Provider Org</fullName>
+                <default>false</default>
+                <label>Managed Care, Exclusive Provider Org</label>
+            </value>
+            <value>
+                <fullName>Medical School, Oriental Medicine</fullName>
+                <default>false</default>
+                <label>Medical School, Oriental Medicine</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Independent Physicians Assoc</fullName>
+                <default>false</default>
+                <label>Managed Care, Independent Physicians Assoc</label>
+            </value>
+            <value>
+                <fullName>Medical School, General</fullName>
+                <default>false</default>
+                <label>Medical School, General</label>
+            </value>
+            <value>
+                <fullName>Dialysis &amp; Infusion Centers, Other</fullName>
+                <default>false</default>
+                <label>Dialysis &amp; Infusion Centers, Other</label>
+            </value>
+            <value>
+                <fullName>Organization, Zoo/Wildlife Refuge</fullName>
+                <default>false</default>
+                <label>Organization, Zoo/Wildlife Refuge</label>
+            </value>
+            <value>
+                <fullName>Organization, Community MH Center</fullName>
+                <default>false</default>
+                <label>Organization, Community MH Center</label>
+            </value>
+            <value>
+                <fullName>Healthcare Manufacturer, General</fullName>
+                <default>false</default>
+                <label>Healthcare Manufacturer, General</label>
+            </value>
+            <value>
+                <fullName>Residency Program, Corporate Office</fullName>
+                <default>false</default>
+                <label>Residency Program, Corporate Office</label>
+            </value>
+            <value>
+                <fullName>Dialysis &amp; Infusion Centers, Corporate Office</fullName>
+                <default>false</default>
+                <label>Dialysis &amp; Infusion Centers, Corporate Office</label>
+            </value>
+            <value>
+                <fullName>Healthcare Manufacturer, Animal Health</fullName>
+                <default>false</default>
+                <label>Healthcare Manufacturer, Animal Health</label>
+            </value>
+            <value>
+                <fullName>Organization, Psychology/Counseling Group</fullName>
+                <default>false</default>
+                <label>Organization, Psychology/Counseling Group</label>
+            </value>
+            <value>
+                <fullName>Dialysis &amp; Infusion Centers, Hospital-based Dialysis/Infusion</fullName>
+                <default>false</default>
+                <label>Dialysis &amp; Infusion Centers, Hospital-based Dialysis/Infusion</label>
+            </value>
+            <value>
+                <fullName>Organization, Admin Only</fullName>
+                <default>false</default>
+                <label>Organization, Admin Only</label>
+            </value>
+            <value>
+                <fullName>Organization, Dentistry Group</fullName>
+                <default>false</default>
+                <label>Organization, Dentistry Group</label>
+            </value>
+            <value>
+                <fullName>Organization, Group Practice</fullName>
+                <default>false</default>
+                <label>Organization, Group Practice</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Point of Service</fullName>
+                <default>false</default>
+                <label>Managed Care, Point of Service</label>
+            </value>
+            <value>
+                <fullName>Pharmacy, Retail</fullName>
+                <default>false</default>
+                <label>Pharmacy, Retail</label>
+            </value>
+            <value>
+                <fullName>Healthcare Manufacturer, Pharmaceutical/Biotech</fullName>
+                <default>false</default>
+                <label>Healthcare Manufacturer, Pharmaceutical/Biotech</label>
+            </value>
+            <value>
+                <fullName>Healthcare Manufacturer, Vaccine Manufacturer</fullName>
+                <default>false</default>
+                <label>Healthcare Manufacturer, Vaccine Manufacturer</label>
+            </value>
+            <value>
+                <fullName>Medical School, Pharmacy</fullName>
+                <default>false</default>
+                <label>Medical School, Pharmacy</label>
+            </value>
+            <value>
+                <fullName>Medical School, Psychology</fullName>
+                <default>false</default>
+                <label>Medical School, Psychology</label>
+            </value>
+            <value>
+                <fullName>Medical School, Social Work</fullName>
+                <default>false</default>
+                <label>Medical School, Social Work</label>
+            </value>
+            <value>
+                <fullName>Healthcare Manufacturer, Corporate Office</fullName>
+                <default>false</default>
+                <label>Healthcare Manufacturer, Corporate Office</label>
+            </value>
+            <value>
+                <fullName>Organization, Lab</fullName>
+                <default>false</default>
+                <label>Organization, Lab</label>
+            </value>
+            <value>
+                <fullName>Organization, Hospital</fullName>
+                <default>false</default>
+                <label>Organization, Hospital</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Integrated Healthcare Network</fullName>
+                <default>false</default>
+                <label>Managed Care, Integrated Healthcare Network</label>
+            </value>
+            <value>
+                <fullName>Home Health Care Agencies, Corporate Office</fullName>
+                <default>false</default>
+                <label>Home Health Care Agencies, Corporate Office</label>
+            </value>
+            <value>
+                <fullName>Pharmacy, Oncology Specialty Pharmacy</fullName>
+                <default>false</default>
+                <label>Pharmacy, Oncology Specialty Pharmacy</label>
+            </value>
+            <value>
+                <fullName>Medical Board, Other</fullName>
+                <default>false</default>
+                <label>Medical Board, Other</label>
+            </value>
+            <value>
+                <fullName>Organization, Veterinary Group</fullName>
+                <default>false</default>
+                <label>Organization, Veterinary Group</label>
+            </value>
+            <value>
+                <fullName>Organization, Chiropractic Group</fullName>
+                <default>false</default>
+                <label>Organization, Chiropractic Group</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Workers Comp</fullName>
+                <default>false</default>
+                <label>Managed Care, Workers Comp</label>
+            </value>
+            <value>
+                <fullName>Medical School, Respiratory Therapy</fullName>
+                <default>false</default>
+                <label>Medical School, Respiratory Therapy</label>
+            </value>
+            <value>
+                <fullName>Prison, City &amp; Local</fullName>
+                <default>false</default>
+                <label>Prison, City &amp; Local</label>
+            </value>
+            <value>
+                <fullName>Organization, Nursing Home / Long Term Care</fullName>
+                <default>false</default>
+                <label>Organization, Nursing Home / Long Term Care</label>
+            </value>
+            <value>
+                <fullName>Pharmacy, Other Managed Care</fullName>
+                <default>false</default>
+                <label>Pharmacy, Other Managed Care</label>
+            </value>
+            <value>
+                <fullName>Healthcare Manufacturer, Medical-Surgical</fullName>
+                <default>false</default>
+                <label>Healthcare Manufacturer, Medical-Surgical</label>
+            </value>
+            <value>
+                <fullName>Organization, Podiatry Group</fullName>
+                <default>false</default>
+                <label>Organization, Podiatry Group</label>
+            </value>
+            <value>
+                <fullName>Pharmacy, Other Specialty Clinic</fullName>
+                <default>false</default>
+                <label>Pharmacy, Other Specialty Clinic</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Medicare Risk HMO</fullName>
+                <default>false</default>
+                <label>Managed Care, Medicare Risk HMO</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Corporate Office</fullName>
+                <default>false</default>
+                <label>Managed Care, Corporate Office</label>
+            </value>
+            <value>
+                <fullName>Medical School, Nursing</fullName>
+                <default>false</default>
+                <label>Medical School, Nursing</label>
+            </value>
+            <value>
+                <fullName>Pharmacy, Mail Order Pharmacy</fullName>
+                <default>false</default>
+                <label>Pharmacy, Mail Order Pharmacy</label>
+            </value>
+            <value>
+                <fullName>Medical School, Osteopathic</fullName>
+                <default>false</default>
+                <label>Medical School, Osteopathic</label>
+            </value>
+            <value>
+                <fullName>Medical School, Occupational Therapy</fullName>
+                <default>false</default>
+                <label>Medical School, Occupational Therapy</label>
+            </value>
+            <value>
+                <fullName>Organization, Clinic at Hospital</fullName>
+                <default>false</default>
+                <label>Organization, Clinic at Hospital</label>
+            </value>
+            <value>
+                <fullName>Medical School, Chiropractic</fullName>
+                <default>false</default>
+                <label>Medical School, Chiropractic</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Integrated Health care Network</fullName>
+                <default>false</default>
+                <label>Managed Care, Integrated Health care Network</label>
+            </value>
+            <value>
+                <fullName>Pharmacy, HIV/AIDS Clinic</fullName>
+                <default>false</default>
+                <label>Pharmacy, HIV/AIDS Clinic</label>
+            </value>
+            <value>
+                <fullName>Medical School, Homeopathic</fullName>
+                <default>false</default>
+                <label>Medical School, Homeopathic</label>
+            </value>
+            <value>
+                <fullName>Medical School, PA</fullName>
+                <default>false</default>
+                <label>Medical School, PA</label>
+            </value>
+            <value>
+                <fullName>Organization, Group at Hospital</fullName>
+                <default>false</default>
+                <label>Organization, Group at Hospital</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Physician Practice Management</fullName>
+                <default>false</default>
+                <label>Managed Care, Physician Practice Management</label>
+            </value>
+            <value>
+                <fullName>Medical School, Dental</fullName>
+                <default>false</default>
+                <label>Medical School, Dental</label>
+            </value>
+            <value>
+                <fullName>Medical School, Allopathic</fullName>
+                <default>false</default>
+                <label>Medical School, Allopathic</label>
+            </value>
+            <value>
+                <fullName>Residency Program, Other</fullName>
+                <default>false</default>
+                <label>Residency Program, Other</label>
+            </value>
+            <value>
+                <fullName>Pharmacy, Home Health</fullName>
+                <default>false</default>
+                <label>Pharmacy, Home Health</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Insurance Carriers</fullName>
+                <default>false</default>
+                <label>Managed Care, Insurance Carriers</label>
+            </value>
+            <value>
+                <fullName>Organization, Other</fullName>
+                <default>false</default>
+                <label>Organization, Other</label>
+            </value>
+            <value>
+                <fullName>Healthcare Manufacturer, Ophthalmic</fullName>
+                <default>false</default>
+                <label>Healthcare Manufacturer, Ophthalmic</label>
+            </value>
+            <value>
+                <fullName>Organization, Optometry Group</fullName>
+                <default>false</default>
+                <label>Organization, Optometry Group</label>
+            </value>
+            <value>
+                <fullName>Healthcare Manufacturer, Durable Medical Equipment</fullName>
+                <default>false</default>
+                <label>Healthcare Manufacturer, Durable Medical Equipment</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Employer Groups</fullName>
+                <default>false</default>
+                <label>Managed Care, Employer Groups</label>
+            </value>
+            <value>
+                <fullName>Healthcare Manufacturer, Other</fullName>
+                <default>false</default>
+                <label>Healthcare Manufacturer, Other</label>
+            </value>
+            <value>
+                <fullName>Medical School, Physical Therapy</fullName>
+                <default>false</default>
+                <label>Medical School, Physical Therapy</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Medicare Prescription Drug Plan</fullName>
+                <default>false</default>
+                <label>Managed Care, Medicare Prescription Drug Plan</label>
+            </value>
+            <value>
+                <fullName>Managed Care, HMO</fullName>
+                <default>false</default>
+                <label>Managed Care, HMO</label>
+            </value>
+            <value>
+                <fullName>Organization, Corporate Office</fullName>
+                <default>false</default>
+                <label>Organization, Corporate Office</label>
+            </value>
+            <value>
+                <fullName>Healthcare Manufacturer, Device</fullName>
+                <default>false</default>
+                <label>Healthcare Manufacturer, Device</label>
+            </value>
+            <value>
+                <fullName>Organization, Residential Facility</fullName>
+                <default>false</default>
+                <label>Organization, Residential Facility</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Medicare Advantage</fullName>
+                <default>false</default>
+                <label>Managed Care, Medicare Advantage</label>
+            </value>
+            <value>
+                <fullName>Pharmacy, Other</fullName>
+                <default>false</default>
+                <label>Pharmacy, Other</label>
+            </value>
+            <value>
+                <fullName>Medical School, Podiatric</fullName>
+                <default>false</default>
+                <label>Medical School, Podiatric</label>
+            </value>
+            <value>
+                <fullName>Prison, Federal</fullName>
+                <default>false</default>
+                <label>Prison, Federal</label>
+            </value>
+            <value>
+                <fullName>Organization, University</fullName>
+                <default>false</default>
+                <label>Organization, University</label>
+            </value>
+            <value>
+                <fullName>Pharmacy, Kaiser</fullName>
+                <default>false</default>
+                <label>Pharmacy, Kaiser</label>
+            </value>
+            <value>
+                <fullName>Pharmacy, Specialty Pharmacy</fullName>
+                <default>false</default>
+                <label>Pharmacy, Specialty Pharmacy</label>
+            </value>
+            <value>
+                <fullName>Prison, Corporate Office</fullName>
+                <default>false</default>
+                <label>Prison, Corporate Office</label>
+            </value>
+            <value>
+                <fullName>Dialysis &amp; Infusion Centers, General</fullName>
+                <default>false</default>
+                <label>Dialysis &amp; Infusion Centers, General</label>
+            </value>
+            <value>
+                <fullName>Healthcare Provider, General</fullName>
+                <default>false</default>
+                <label>Healthcare Provider, General</label>
+            </value>
+            <value>
+                <fullName>Managed Care, General Managed Care</fullName>
+                <default>false</default>
+                <label>Managed Care, General Managed Care</label>
+            </value>
+            <value>
+                <fullName>Medical School, Government</fullName>
+                <default>false</default>
+                <label>Medical School, Government</label>
+            </value>
+            <value>
+                <fullName>Managed Care, Medicare Risk PPO</fullName>
+                <default>false</default>
+                <label>Managed Care, Medicare Risk PPO</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

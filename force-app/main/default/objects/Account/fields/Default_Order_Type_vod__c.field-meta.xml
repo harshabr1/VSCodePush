@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Order_Type_vod__c</fullName>
+    <description>The order type that is created by default for this account, when creating a new order.</description>
+    <externalId>false</externalId>
+    <label>Default Order Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Direct_vod</fullName>
+                <default>false</default>
+                <label>Direct_vod</label>
+            </value>
+            <value>
+                <fullName>Transfer_vod</fullName>
+                <default>false</default>
+                <label>Transfer_vod</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
