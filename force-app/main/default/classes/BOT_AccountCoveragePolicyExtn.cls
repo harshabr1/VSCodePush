@@ -2,7 +2,7 @@
 Name            : BOT_AccountCoveragePolicyExtn
 Created date    : 20-DEC-2018
 Created by      : Sreenivasulu Adipudi
-Description     : This class is written by BusinessOne Technologies Inc. It is an extension of BOT_AccountCoveragePolicy Visualforce page.
+Description     :  This class is written by BusinessOne Technologies Inc. It is an extension of BOT_AccountCoveragePolicy Visualforce page.
 */
 public with sharing class BOT_AccountCoveragePolicyExtn 
 {
