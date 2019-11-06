@@ -1,0 +1,54 @@
+<apex:page docType="html-5.0" standardController="Account" extensions="BOT_RecordACallOnAccountExtn" sidebar="false" >
+	<apex:form >
+    	<apex:pageBlock title="BOT Call" >
+        	<apex:pageBlockButtons >
+            	<apex:commandButton action="{!save}" value="Save" />
+                <apex:commandButton action="{!cancel}" value="Cancel" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Information" columns="2">
+            	<apex:outputLabel value="Account">&nbsp;&nbsp;&nbsp;
+                	<apex:outputLink value="/{!objAccount.id}" target="_top" style="font-weight">{!objAccount.Name}</apex:outputLink>
+            	</apex:outputLabel>
+                <apex:outputLabel value="Status">&nbsp;&nbsp;&nbsp;
+                	<apex:selectList value="{!strSelectedCallStatus}" size="1">
+                    	<apex:selectOptions value="{!DynamicCallStatusList}"/>
+                	</apex:selectList>
+                </apex:outputLabel>
+                <apex:outputLabel value="Address">&nbsp;&nbsp;&nbsp;
+                	<apex:selectList value="{!strSelectedAddress}" size="1">
+                    	<apex:selectOptions value="{!DynamicAddressList}"/>
+                	</apex:selectList>
+                </apex:outputLabel>
+                <apex:outputPanel >
+                	Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:input type="datetime-local" value="{!dtScheduledTime}"/>
+                </apex:outputPanel>
+        	</apex:pageBlockSection>
+            <apex:pageBlockSection title="Attendes" columns="3">
+                <apex:repeat value="{!lstBOTContacts}" var="objBOTContact" >
+                	<apex:outputPanel >
+                    	<apex:inputCheckbox id="checkbox1"/>
+                    	<apex:outputlabel for="checkbox1" value="{!objBOTContact.Name}"/>
+                    </apex:outputPanel>
+                </apex:repeat>
+            	<apex:outputPanel >
+                    <apex:outputLink title="Add All..." />
+                    <apex:outputLink title="Remove All..." />
+            	</apex:outputPanel>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Discussion" columns="2">
+            	<apex:repeat value="{!lstFormularyProduct}" var="objFormularyProduct">
+                	<apex:outputPanel >
+                		<apex:outputlabel value="{!objFormularyProduct.Market_vod__c}"/>	
+                	</apex:outputPanel>
+                    <apex:outputPanel >
+                		<apex:inputCheckbox id="checkbox2">
+                            <apex:actionSupport event="onchange" />
+                        </apex:inputCheckbox>
+                    	<apex:outputlabel for="checkbox2" value="{!objFormularyProduct.Name}"/>	
+                	</apex:outputPanel>
+                </apex:repeat>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

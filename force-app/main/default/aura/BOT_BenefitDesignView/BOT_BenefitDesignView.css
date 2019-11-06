@@ -1,0 +1,6 @@
+.THIS .select-auto-width > .slds-form-element__control > .slds-select_container{
+    display: inline-block;
+}
+H1.THIS {
+    font-size:12pt;
+}

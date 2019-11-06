@@ -1,0 +1,75 @@
+<!--
+Name 		 : BOT_CoveragePolicyView
+Created By	 : Harsha BR
+Created Date : 12-Nov-2018
+Overview 	 : It is written by BusinessOne Technologies Inc. It will display the details reagrding the Coverage Policy. 
+-->
+<apex:page standardController="BOT_Coverage_Policy__c" extensions="BOT_CoveragePolicyViewExtn" standardStylesheets="false">
+	<style>
+    	body .bPageBlock .pbBody .red .pbSubheader{
+        	background-color:#3A8AB3;
+        }
+   	</style>
+    <apex:form id="theForm">
+        
+        <apex:pageBlock id="thePB">  
+            <apex:outputPanel styleClass="red" layout="block">
+                
+             <!-- Start Coverage Policy Forms 
+                <apex:pageBlockSection columns="2" collapsible="true"  title="Coverage Policy/Prior Authorization documents" >       
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Coverage Policy</apex:outputLabel>
+                    <apex:commandLink value="View Document" action="{!retrieveCPformPDF}" target="_blank"/>
+                </apex:pageBlockSectionItem>
+                    
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Prior Authorization</apex:outputLabel>
+                    <apex:commandLink value="View Document" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+             End Coverage Policy Forms -->
+                
+            <!-- Start Diagnostic Requirements for Initial Therapy Section -->
+            <apex:pageBlockSection columns="1" collapsible="true"  title="Diagnostic Requirements for Initial Therapy" >       
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="{!lstCoveragePolicy[0].BOT_DRI__c}" escape="false" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <!-- End Diagnostic Requirements for Initial Therapy Section -->
+                
+            <!-- Start Diagnostic Requirements for Continued Therapy Section -->
+            <apex:pageBlockSection columns="1" collapsible="true"  title="Diagnostic Requirements for Continued Therapy" >       
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="{!lstCoveragePolicy[0].BOT_DRC__c}" escape="false" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <!-- End Diagnostic Requirements for Continued Section Therapy -->
+            
+             <!-- Start Prior Authorization Details -->
+            <apex:pageBlockSection columns="1" collapsible="true"  title="Prior Authorization Details"  >
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="{!lstCoveragePolicy[0].BOT_PADetail__c}" escape="false" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <!-- End Prior Authorization Details -->
+            
+            <!-- Start Step Therapy Details -->
+            <apex:pageBlockSection columns="1" collapsible="true" title="Step Therapy Details">
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="{!lstCoveragePolicy[0].BOT_STDetail__c}" escape="fasle" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <!-- End Step Therapy Details -->
+                
+             <!-- Start Poly Therapy Details -->
+            <apex:pageBlockSection columns="1" collapsible="true" title="Poly Therapy Details">
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="{!lstCoveragePolicy[0].BOT_Poly_Therapy_Details__c}" escape="fasle" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <!-- End Poly Therapy Details -->   
+            </apex:outputPanel>
+            
+        </apex:pageBlock>      
+    </apex:form>        
+</apex:page>

@@ -1,0 +1,101 @@
+<!-- 
+Name : BOT_AccountPlanCoveragePolicy
+Created by : Harsha BR
+Created Date : 12-Dec-2018
+Description : This VF page is written by BusinessOne Technologies Inc. It displays Coverage Policy details of selected Account. This page is added to Account plan Pagelayout.
+-->
+<apex:page standardController="Account_Plan_vod__c" extensions="BOT_AccountPlanCoveragePolicyExtn">
+    <style>
+        .coveragepolicy {
+          border: 1px solid #e8e8e8;
+          border-collapse: collapse;
+        }
+        
+        th {
+          padding-top: 5px;
+          padding-botton: 5px;
+          padding-left: 5px;
+          text-align: left;
+          background-color: #f2f2f2;
+          border: 1px solid #c9c9c9;
+        }
+        
+        td {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          padding-left: 5px;
+          border-bottom: 1px solid #e8e8e8;
+        }
+        .coveragepolicy tr:hover {background-color: #e8f7ff;}
+    </style>
+    <apex:form >
+        <!-- If Coverage Policy data not available -->
+        <apex:pageBlock rendered="{!IF(intMarketCount==0,'TRUE','FALSE')}">
+            <apex:image value="{!strLogoUrl}" width="23" height="23" alt="BOT" style="vertical-align:middle"/>
+            <apex:outputLabel value="Coverage Policy" style="vertical-align:middle;font-size: 14px; font-weight: Bold" /><br/><br/>
+            
+            <apex:outputText style="font-size: 15px" value="{!$Label.BOT_NoDataAvailable}"/>
+        </apex:pageBlock>
+        <!-- /If Coverage Policy data not available -->
+        
+        <!-- Market filter -->
+        <apex:pageBlock rendered="{!IF(intMarketCount>0,'TRUE','FALSE')}">
+            <apex:outputPanel >
+                <apex:image value="{!strLogoUrl}" width="23" height="23" alt="BOT" style="vertical-align:middle"/>
+                <apex:outputLabel value="Coverage Policy" style="vertical-align:middle;font-size: 14px; font-weight: Bold" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                
+                <apex:outputLabel value="Select Market" style="vertical-align:middle">&nbsp;
+                    <apex:selectList size="1" value="{!strSelectedMarket}">
+                        <apex:selectOptions value="{!DynamicList}" />
+                        <apex:actionSupport action="{!getCoveragePolicy}" event="onchange" status="status" reRender="CoveragePolicyTable" />
+                    </apex:selectList>
+                </apex:outputLabel>
+            </apex:outputPanel>
+        </apex:pageBlock>
+        <!-- /Market filter -->
+        
+        <!-- Processing status -->
+        <apex:actionStatus id="status" startText="Loading...." startStyle="font-color:red;">
+            <apex:facet name="start">
+                <apex:image value="/img/loading.gif" />
+            </apex:facet>
+        </apex:actionStatus>
+        <!-- /Processing status -->
+        
+        <!-- Coverage Policy table section-->
+        <apex:pageBlock rendered="{!IF(intMarketCount>0,'TRUE','FALSE')}">
+            <table style= "width: 98.6%;position: sticky; border: 1px solid #c9c9c9;" class="coveragepolicy">
+                <tr>
+                    <th style = "width:15%;">Drug Name</th>
+                    <th style = "width:15%;">{!$ObjectType.BOT_Coverage_Policy__c.fields.BOT_Channel__c.Label}</th>
+                    <th style = "width:15%;">{!$ObjectType.BOT_Coverage_Policy__c.fields.BOT_SubChannel__c.Label}</th>
+                    <th style = "width:15%;">{!$ObjectType.BOT_Coverage_Policy__c.fields.BOT_Score__c.Label}</th>
+                    <th style = "width:20%;">{!$ObjectType.BOT_Coverage_Policy__c.fields.BOT_Indication__c.Label}</th>
+                    <th style = "width:20%;">{!$ObjectType.BOT_Coverage_Policy__c.fields.BOT_Sub_Indication__c.Label}</th>
+                    <!--<th style = "width:15%">PA Form</th>
+					<th style = "width:15%">Coverage Policy From</th>-->
+                </tr>
+            </table>
+            <apex:outputPanel id="CoveragePolicyTable">
+                <div style="overflow-y:scroll; height: 145px;">
+                    <table style= "width: 100%; background-color: #FFFFFF;" class="coveragepolicy">
+                        <apex:repeat value="{!lstCoveragePolicy}" var="objCoveragePolicy">
+                            <tr>
+                                <td style = "width:15%;"><apex:outputLink value="/{!objCoveragePolicy.id}" target="_top" style="font-weight">{!objCoveragePolicy.BOT_Formulary_Product__r.Name}</apex:outputLink></td>
+                                <td style = "width:15%;">{!objCoveragePolicy.BOT_Channel__c}</td>
+                                <td style = "width:15%;">{!objCoveragePolicy.BOT_SubChannel__c}</td>
+                                <td style = "width:15%;">{!objCoveragePolicy.BOT_Score__c}</td>
+                                <td style = "width:20%;">{!objCoveragePolicy.BOT_Indication__c}</td>
+                                <td style = "width:20%;">{!objCoveragePolicy.BOT_Sub_Indication__c}</td>
+                                <!--<td style = "width:15%">View Document</td>
+								<td style = "width:15%">View Document</td>-->
+                            </tr>
+                        </apex:repeat>
+                    </table>
+                </div>
+            </apex:outputPanel>
+        </apex:pageBlock>
+        <!-- /Coverage Policy table section-->
+    </apex:form>
+</apex:page>

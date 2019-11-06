@@ -1,0 +1,32 @@
+<apex:page standardController="Account" extensions="BOT_DrugAccessDashboardDynamicExtn">
+    <script>
+    var dataFE = new Array();
+    </script>
+    
+    <apex:repeat value="{!data}" var="monthList">
+        <script type="text/javascript">
+        var product = {};
+        </script>
+        <apex:repeat value="{!data[monthList]}" var="productList">
+            {!monthList} {!productList} {!data[monthList][productList]}<br/>
+            <script type="text/javascript">
+            product['{!productList}'] = {!data[monthList][productList]};
+            product['name'] = '{!monthList}';
+            </script>
+        </apex:repeat>
+        <script type="text/javascript">
+        dataFE.push(product);
+        </script>
+    </apex:repeat>
+    
+    <apex:chart data="dataFE" height="400" width="500">
+        <apex:legend position="left"/>
+        <apex:axis type="Numeric" position="left" title="title" grid="true" fields="yfield" dashSize="2">
+            <apex:chartLabel />
+        </apex:axis>
+        <apex:axis type="Category" position="bottom" fields="name">
+            <apex:chartLabel rotate="315"/>
+        </apex:axis>
+        <apex:barSeries orientation="vertical" axis="left" stacked="true" xField="name" yField="yfield" title="title"/>
+    </apex:chart>
+</apex:page>

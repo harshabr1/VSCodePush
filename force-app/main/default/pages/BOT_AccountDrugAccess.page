@@ -1,0 +1,41 @@
+<!--
+Name            : BOT_AccountDrugAccess
+Created by      : Sreenivasulu Adipudi
+Created date    : 07-SEP-2018
+Description     : This Visualforce page is created by BusinessOneTechnologies Inc.
+				  It is used to display the drug access dashboard on Account detail page.
+-->
+<apex:page standardController="Account" extensions="BOT_AccountDrugAccessExtn" showHeader="false" >
+    <apex:form >
+        <!-- Market filter -->
+        <apex:pageBlock id="PB1">
+            <apex:outputPanel >
+            	<apex:image value="{!strLogoUrl}" width="23" height="23" alt="BOT" style="vertical-align:middle"/>
+                <apex:outputLabel value="Dashboard" style="vertical-align:middle;font-size: 14px; font-weight: Bold" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                <apex:outputLabel value="Select Market" style="vertical-align:middle">&nbsp;
+                   	<apex:selectList size="1" value="{!strSelectedMarket}">
+                       	<apex:selectOptions value="{!DynamicList}" />
+                       	<apex:actionSupport action="{!getDrugAccessFilteredByMarket}" event="onchange" reRender="PB2" />
+                   	</apex:selectList>
+                </apex:outputLabel>
+        	</apex:outputPanel>
+        </apex:pageBlock>
+        <!-- /Market filter -->
+            
+        <!-- Processing status -->
+        <apex:actionStatus id="status" startText="Loading...." startStyle="font-color:red;">
+        	<apex:facet name="start">
+            	<apex:image value="/img/loading.gif" />
+            </apex:facet>
+       	</apex:actionStatus>
+        <!-- /Processing status -->
+            
+        <!-- Invoke Drug Access Component with required values -->
+        <apex:pageBlock id="PB2" >
+        	<c:BOT_DrugAccessComponent recordId="{!accountId}" accountId="{!accountId}" strSelectedMarket="{!strSelectedMarket}" blnRenderChart="{!blnRenderChart}"/>
+        </apex:pageBlock>
+        <!-- /Invoke Drug Access Component with required values -->
+    </apex:form>
+</apex:page>

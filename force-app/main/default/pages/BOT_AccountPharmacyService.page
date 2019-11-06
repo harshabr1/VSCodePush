@@ -1,0 +1,104 @@
+<!-- 
+Name            : BOT_AccountPharmacyService
+Created by      : Sreenivasulu Adipudi
+Created Date    : 08-MAR-2019
+Description     : This VF page is written by BusinessOne Technologies Inc. It displays Pharmacy services of selected Account. 
+				  This page is embeded to Account Pagelayouts except PBM Layout. Pharmacy service filter is implemeted here.
+-->
+<apex:page standardController="Account" extensions="BOT_AccountPharmacyServiceExtn" >
+    <style>
+        .pharmacyService {
+          border: 1px solid #e8e8e8;
+          border-collapse: collapse;
+        }
+        
+        th {
+          padding-top: 5px;
+          padding-botton: 5px;
+          padding-left: 5px;
+          text-align: left;
+          background-color: #f2f2f2;
+          border: 1px solid #c9c9c9;
+        }
+        
+        td {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          padding-left: 5px;
+          border-bottom: 1px solid #e8e8e8;
+        }
+        .pharmacyService tr:hover {background-color: #e8f7ff;}
+    </style>
+    <apex:form >
+        <!-- If Pharmacy Service data not available -->
+        <apex:pageBlock rendered="{!IF(intPharmacyServiceCount==0,'TRUE','FALSE')}">
+            <apex:image value="{!strLogoUrl}" width="23" height="23" alt="BOT" style="vertical-align:middle"/>
+            <apex:outputLabel value="Pharmacy Service" style="vertical-align:middle;font-size: 14px; font-weight: Bold" /><br/><br/>
+            
+            <apex:outputText style="font-size: 15px" value="{!$Label.BOT_NoDataAvailable}"/>
+        </apex:pageBlock>
+        <!-- /If Pharmacy Service data not available -->
+        
+        <!-- Pharmacy Service filter -->
+        <apex:pageBlock rendered="{!IF(intPharmacyServiceCount>0,'TRUE','FALSE')}">
+            <apex:outputPanel >
+            	<apex:image value="{!strLogoUrl}" width="23" height="23" alt="BOT" style="vertical-align:middle"/>
+                <apex:outputLabel value="Pharmacy Service" style="vertical-align:middle;font-size: 14px; font-weight: Bold" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
+                
+                <apex:outputLabel value="Select Service Name" style="vertical-align:middle">&nbsp;
+                	<apex:selectList size="1" value="{!strSelectedPharmacyService}">
+                    	<apex:selectOptions value="{!DynamicList}" />
+                        <apex:actionSupport action="{!getPharmacyService}" event="onchange" status="status" reRender="PharmacyServiceTable" />
+                    </apex:selectList>
+                </apex:outputLabel>
+           	</apex:outputPanel>
+        </apex:pageBlock>
+        <!-- /Pharmacy Service filter -->
+        
+        <!-- Processing status -->
+        <apex:actionStatus id="status" startText="Loading...." startStyle="font-color:red;">
+            <apex:facet name="start">
+                <apex:image value="/img/loading.gif" />
+            </apex:facet>
+        </apex:actionStatus>
+        <!-- /Processing status -->
+        
+        <!-- Pharmacy Service table section-->
+        <apex:pageBlock rendered="{!IF(intPharmacyServiceCount>0,'TRUE','FALSE')}">
+            
+            <!-- Pharmacy Service filter table header section-->
+            <table style= "width: 98.6%;position: sticky; border: 1px solid #c9c9c9;" class="pharmacyService">
+                <tr>
+                    <th style = "width:15%;">{!$ObjectType.BOT_Pharmacy_Service__c.fields.Name.Label}</th>
+                    <th style = "width:15%;">{!$ObjectType.BOT_Pharmacy_Service__c.fields.BOT_Channel__c.Label}</th>
+                    <th style = "width:15%;">{!$ObjectType.BOT_Pharmacy_Service__c.fields.BOT_SubChannel__c.Label}</th>
+                    <th style = "width:20%;">{!$ObjectType.BOT_Pharmacy_Service__c.fields.BOT_PBM_Name__c.Label}</th>
+                    <th style = "width:35%;">{!$ObjectType.BOT_Pharmacy_Service__c.fields.BOT_Provider_Name__c.Label}</th>
+                </tr>
+            </table>
+            <!-- /Pharmacy Service table header section-->
+            
+            <!-- Pharmacy Service table body section-->
+            <apex:outputPanel id="PharmacyServiceTable">
+                <div style="overflow-y:scroll; height: 145px;">
+                    <table style= "width: 100%; background-color: #FFFFFF;" class="pharmacyService">
+                        <apex:repeat value="{!lstPharmacyService}" var="objPharmacyService">
+                            <tr>
+                                <!--<td style = "width:15%;"><apex:outputLink value="/{!objPharmacyService.id}" target="_top" style="font-weight">{!objPharmacyService.Name}</apex:outputLink></td>-->
+                                <td style = "width:15%;">{!objPharmacyService.Name}</td>
+                                <td style = "width:15%;">{!objPharmacyService.BOT_Channel__c}</td>
+                                <td style = "width:15%;">{!objPharmacyService.BOT_SubChannel__c}</td>
+                                <td style = "width:20%;"><apex:outputLink value="/{!objPharmacyService.BOT_PBM_Name__c}" target="_top" style="font-weight">{!objPharmacyService.BOT_PBM_Name__r.Name}</apex:outputLink></td>
+                                <td style = "width:35%;">{!objPharmacyService.BOT_Provider_Name__c}</td>
+                            </tr>
+                        </apex:repeat>
+                    </table>
+                </div>
+            </apex:outputPanel>
+            <!-- /Pharmacy Service table body section-->
+            
+        </apex:pageBlock>
+        <!-- /Pharmacy Service table section-->
+    </apex:form>
+</apex:page>

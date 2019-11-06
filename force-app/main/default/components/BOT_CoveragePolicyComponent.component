@@ -1,0 +1,74 @@
+<!--
+Name            : BOT_CoveragePolicyComponent
+Created by      : Sreenivasulu Adipudi
+Created date    : 20-DEC-2018
+Description     : This Visualforce Components is created by BusinessOneTechnologies Inc. It is used to build the Coverage policy details of the selected Account. 
+This component is used in BOT_AccountCoveragePolicy and BOT_AccountPlanCoveragePolicy visualforce pages. 
+-->
+<apex:component >
+    <style>
+        .coveragepolicy{
+        	border: 1px solid #1C6EA4;
+  			background-color: #FFFFFF;
+  			width: 100%;
+  			text-align: left;
+  			border-collapse: collapse;
+        }
+        table thead th {
+  			border: 1px solid #AAAAAA;
+  			padding-top: 6px;
+  			padding-bottom: 6px;
+  			text-align: left;
+        	border-collapse: collapse;
+		}
+        table tbody td {
+        	border: 1px solid #AAAAAA;
+  			font-size: 13px;
+        	padding-top: 6px;
+  			padding-bottom: 6px;
+  			text-align: left;
+        	border-collapse: collapse;
+		}
+    </style>
+    
+    <!--attributes-->
+    <apex:attribute name="lstCoveragePolicy" description="This is used to hold the list of coverage policy records." type="BOT_Coverage_Policy__c[]" required="true"/>
+    <!--/attributes-->
+    
+    <!-- Coverage Policy table section-->
+        <apex:pageBlockSection columns="1">
+            <apex:outputPanel >
+                <table style= "width: 99%;" class="coveragepolicy">
+                	<div style="position: sticky;">
+                        <thead>
+                    	<th style = "width:15%">Drug Name</th>
+                    	<th style = "width:10%">Channel</th>
+                    	<th style = "width:10%">SubChannel</th>
+                    	<th style = "width:10%">Score</th>
+                    	<th style = "width:12%">Indication</th>
+                        <th style = "width:13%">Sub-Indication</th>
+                        <th style = "width:15%">PA Form</th>
+                        <th style = "width:15%">Coverage Policy From</th>
+                        </thead>
+                    </div>
+                </table>
+                <div style="overflow:scroll; height: 150px;">
+                <table style= "width: 100%;" class="coveragepolicy">
+                	<apex:repeat value="{!lstCoveragePolicy}" var="objCoveragePolicy">
+                    	<tbody>
+                        	<td style = "width:15%"><apex:outputLink value="/{!objCoveragePolicy.id}" target="_top" style="font-weight">{!objCoveragePolicy.BOT_Formulary_Product__r.Name}</apex:outputLink></td>
+                        	<td style = "width:10%">{!objCoveragePolicy.BOT_Channel__c}</td>
+                        	<td style = "width:10%">{!objCoveragePolicy.BOT_SubChannel__c}</td>
+                        	<td style = "width:10%">{!objCoveragePolicy.BOT_Score__c}</td>
+                        	<td style = "width:12%">{!objCoveragePolicy.BOT_Indication__c}</td>
+                            <td style = "width:13%">{!objCoveragePolicy.BOT_Sub_Indication__c}</td>
+                            <td style = "width:15%">View Document</td>
+                            <td style = "width:15%">View Document</td>
+                        </tbody>
+                </apex:repeat>
+            </table>
+         </div>
+            </apex:outputPanel>
+        </apex:pageBlockSection>
+    <!-- /Coverage Policy table section-->
+</apex:component>

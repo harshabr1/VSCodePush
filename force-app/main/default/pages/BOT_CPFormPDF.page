@@ -1,0 +1,60 @@
+<!--
+Name         : BOT_CPFormPDF
+Created By   : Harsha BR
+Created Date : 15-Feb-2019
+Overview     : It is written by BusinessOne Technologies Inc. It will display the details reagrding the Coverage Policy. 
+-->
+<apex:page standardController="BOT_Coverage_Policy__c" standardStylesheets="false" extensions="BOT_CoveragePolicyViewExtn">
+ 	<script type="text/javascript">
+    	window.oncontextmenu = function () {
+            console.log("Right Click Disabled");
+            return false;
+        }
+    </script>
+    <style>
+        body .bPageBlock .pbBody .red .pbSubheader{
+            background-color:#3A8AB3;
+        }
+    </style>
+    <apex:form id="theForm">
+        <apex:pageBlock id="thePB" >
+            
+           <!-- <apex:actionFunction name="paraFunction" action="{!retrieveCPformPDF}" rerender="view"> 
+                <apex:param id="anode" name="node" value="" />
+            </apex:actionFunction>-->
+            
+            <apex:outputPanel styleClass="red" layout="block">
+
+                <apex:pageBlockSection columns="2" collapsible="true"  title="Coverage Policy/Prior Authorization documents" >       
+                <!-- Start Coverage Policy Forms -->
+                <apex:pageBlockSectionItem rendered="{!lstCoveragePolicy[0].BOT_CP_Form_Available__c}">
+                    <apex:outputLabel >Coverage Policy</apex:outputLabel>
+                    	<apex:commandLink value="View Document" action="{!retrieveCPformPDF}" target="_blank" >
+                        <apex:param name="type" value="CP" assignTo="{!type}"/>
+                    </apex:commandLink>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!!lstCoveragePolicy[0].BOT_CP_Form_Available__c}">
+                        <apex:outputLabel >Coverage Policy</apex:outputLabel>
+                        <apex:outputLabel >Not Available</apex:outputLabel>
+                    </apex:pageBlockSectionItem>
+                <!-- End Coverage Policy Forms -->
+                
+                <!-- Start PA Forms -->    
+                <apex:pageBlockSectionItem rendered="{!lstCoveragePolicy[0].BOT_PA_Form_Available__c}">
+                    <apex:outputLabel >Prior Authorization</apex:outputLabel>
+                    <apex:commandLink value="View Document"  action="{!retrieveCPformPDF}" target="_blank">
+                    	<apex:param name="type" value="PA" assignTo="{!type}"/>
+                    </apex:commandLink>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!!lstCoveragePolicy[0].BOT_PA_Form_Available__c}">
+                	<apex:outputLabel >Prior Authorization</apex:outputLabel>
+                    <apex:outputLabel >Not Available</apex:outputLabel> 
+               </apex:pageBlockSectionItem>
+                <!-- End PA Forms -->
+            </apex:pageBlockSection>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

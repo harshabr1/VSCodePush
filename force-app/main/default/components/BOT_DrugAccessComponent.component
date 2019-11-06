@@ -1,0 +1,41 @@
+<!--
+Name            : BOT_DrugAccessComponent
+Created by      : Sreenivasulu Adipudi
+Created date    : 14-DEC-2018
+Description     : This Visualforce Components is created by BusinessOneTechnologies Inc. It is used to build the drug access dashboard. 
+                  This component is used in BOT_AccountDrugAccess and BOT_AccountPlanDrugAccess visualforce pages. 
+-->
+<apex:component >
+    <style>
+    	a:hover {
+			color: red;
+		}
+		a:active {
+			pointer-events: none;
+		}
+	</style>
+    
+    <!--attributes-->
+    <apex:attribute name="recordId" description="It is used to store Account Id/Account plan Id." type="Id" required="true"/>
+    <apex:attribute name="accountId" description="It is used to store Account Id." type="Id" required="true"/>
+    <apex:attribute name="strSelectedMarket" description="It is used to store selected market value." type="String" required="true"/>
+    <apex:attribute name="blnRenderChart" description="It is used to store the render chart boolean value." type="Boolean" required="true"/>
+    <!--/attributes-->
+    
+    <!-- Dashboard section which displays when selected market is All -->
+    <a>
+        <apex:pageBlockSection id="pbs2" rendered="{!blnRenderChart}" >
+        	<analytics:reportChart developerName="BOT_Drug_Access_by_Payer" filter="[{column:'FK_ACC_ID', operator:'equals', value:'{!accountId}'}]" showRefreshButton="false" />   
+        </apex:pageBlockSection>
+    </a>
+    <!-- /Dashboard section -->
+            
+    <!-- Dashboard section which displays when selected market is Not equals to All -->
+	<a>
+    	<apex:pageBlockSection id="pbs3" rendered="{!NOT(blnRenderChart)}" >
+			<analytics:reportChart developerName="BOT_Drug_Access_by_Payer" filter="[{column:'FK_ACC_ID', operator:'equals', value:'{!accountId}'},{column:'CUST_NAME',operator:'equals',value:'{!strSelectedMarket}'}]" showRefreshButton="false" />   
+		</apex:pageBlockSection>
+   	</a>
+    <!-- /Dashboard section -->
+    
+</apex:component>

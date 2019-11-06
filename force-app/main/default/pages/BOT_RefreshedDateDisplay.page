@@ -1,0 +1,16 @@
+<!--
+Name            : BOT_RefreshedDateDisplay
+Created By      : Sreenivasulu A
+Created Date    : 10-OCT-2018
+Overview        : It is implemented by BusinessOne Technologies Inc.It is used to display the data refreshed date on Home page.
+-->
+<apex:page controller="BOT_RefreshedDateDisplayExtn" showHeader="false" sidebar="false">
+    <apex:form >
+        <apex:pageBlock >
+            <div style="font-size:15px;text-align:right;color:blue">
+                <!--<apex:outputLink value="https://www.businessonetech.com/" target="_blank" style="font-size:15px;color:blue">BusinessOne </apex:outputLink>-->
+                <apex:outputText value=" BusinessOne data updated as of {!lastUpdatedDate}"/>   
+            </div>            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

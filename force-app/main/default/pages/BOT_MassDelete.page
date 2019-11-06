@@ -1,0 +1,173 @@
+<!--
+Name            : BOT_Mass_Delete
+Created By      : Sreenivasulu A
+Created Date    : 09-JAN-2019
+Overview        : This Page is written by BusinessOne Technologies Inc. It is used to perform delete opration on the specified object.
+-->
+<apex:page controller="BOT_MassDeleteCtrl" sidebar="false" tabStyle="Mass_Delete__tab">
+    <apex:pageMessages />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".bPageBlock").css("background-color","white");
+    });
+    </script>
+    <!-- Message to the user as Conform delete -->
+    <script type="text/javascript">
+        function confirmDelete() {
+            return confirm('Records will be deleted permanently. Do you want to continue?');
+        }
+    </script>
+    <!-- /Message to the user as Conform delete -->
+    
+    <!-- Setting column width for grid -->
+    <style>
+        .columnstyle {width:100%}
+        #alignment {
+        	vertical-align: top;
+        }
+        .buttonStyle { width:170px;height:25px }
+    </style>
+    <!-- /Setting column width for grid -->
+    
+    <apex:form >
+        
+        <!-- Delete all records -->
+        <apex:pageBlock title="Delete All records from the Org" >
+            <apex:panelGrid columns="3">
+            	<apex:outputPanel >
+                	<apex:commandbutton style="background:#fc4141;width:170px;height:30px;color:#ffffff" value="Delete All" action="{!deleteAll}" onClick="if(!confirmDelete()) return false;"/>
+                </apex:outputPanel>
+                <apex:outputPanel >
+                    <apex:inputCheckbox id="IncludeAccount" value="{!blnIncludeAccount}" />
+                    <apex:outputLabel for="IncludeAccount" > Include Account</apex:outputLabel><br/>
+                    
+                    <apex:inputCheckbox id="IncludeAccountAddress" value="{!blnIncludeAccountAddress}" />
+                    <apex:outputLabel for="IncludeAccountAddress" > Include Account Address</apex:outputLabel><br/>
+                    
+                    <apex:inputCheckbox id="IncludeFormularyProduct" value="{!blnIncludeFormularyProduct}" />
+                    <apex:outputLabel for="IncludeFormularyProduct" > Include Formulary Product</apex:outputLabel><br/>
+                    
+                    <apex:inputCheckbox id="IncludeCoveragePolicy" value="{!blnIncludeCoveragePolicy}" />
+                    <apex:outputLabel for="IncludeCoveragePolicy" > Include Coverage Policy</apex:outputLabel><br/>
+                    
+                </apex:outputPanel>
+                <apex:outputPanel >
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i style="color:#fc4141;">Checking/Enabling these options will include these records for deletion.</i>
+                </apex:outputPanel>
+            </apex:panelGrid>
+            <p>
+            	<b style="color:#fc4141;">Note</b>: Delete All will delete <b>Benefit Design, Benefit Design Line, Plan Product, Account to Specialty Provider, Specialty Provider to Thera,<br/> Pharmacy Service, Plan-Product Formulary JO, Drug Access, Child Accounts (PBM to Business Accounts)</b> object data.
+           	</p>
+        </apex:pageBlock>
+        <!-- /Delete all records -->
+        
+		<!-- Delete Account Records -->        
+		<apex:pageBlock title="Account : {!intAccountCount}" >
+            <apex:panelGrid columns="3" >
+            	<apex:outputPanel >
+                	<apex:commandbutton styleClass="buttonStyle" value="Delete" action="{!deleteAccount}" onClick="if(!confirmDelete()) return false;" disabled="{!if(intAccountCount > 0,'FALSE','TRUE')}"/>
+                </apex:outputPanel>
+                <apex:outputPanel >
+                	<apex:inputCheckbox id="IncludeIDN" value="{!blnIncludeIDNAccount}" />
+                    <apex:outputLabel for="IncludeIDN" > Include IDN, ACO and Hospital Accounts</apex:outputLabel><br/>
+                    
+                    <apex:inputCheckbox id="IncludePersonAccount" value="{!blnIncludePersonAccount}" />
+                    <apex:outputLabel for="IncludePersonAccount" > Include Person Account(s)</apex:outputLabel><br/>
+                    
+                    </apex:outputPanel>
+                    <apex:outputPanel >
+                    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i style="color:#fc4141;">Checking/Enabling these options will include these records for deletion.</i>
+                	</apex:outputPanel>
+                </apex:panelGrid>
+            	<p>
+                    <b style="color:#fc4141;">Note</b>: Deleting this object data will also delete all linking objects data as well which include <b>Addess, Account Plan, Call, Coverage Policy, <br/> Plan Product, Plan-Product Formulary and Specialty Provider Junction</b> object data.
+                </p>
+			</apex:pageBlock>
+            <!-- / Delete Account Records -->
+            
+		<apex:pageBlock >            
+			<!-- Delete Address Records -->
+            <apex:pageBlockSection columns="1" title="Address : {!intAddressCount}" collapsible="false" >
+                <apex:commandbutton styleClass="buttonStyle" value="Delete" action="{!deleteAddress}" onClick="if(!confirmDelete()) return false;" disabled="{!if(intAddressCount > 0,'FALSE','TRUE')}"/>
+            </apex:pageBlockSection>
+            <!-- / Delete Address Records -->
+            
+            <!-- Delete Benefit Design Records -->
+            <apex:pageBlockSection columns="1" title="Benefit Design : {!intBenefitDesignCount}" collapsible="false" >
+                <apex:commandbutton styleClass="buttonStyle" value="Delete" action="{!deleteBenefitDesign}" onClick="if(!confirmDelete()) return false;" disabled="{!if(intBenefitDesignCount > 0,'FALSE','TRUE')}"/>
+                <p>
+                    <b style="color:#fc4141;">Note</b>: Deleting this object data will also delete all linking objects data as well which include <b>Benefit Design Line and Plan-Product Formulary</b> object data.
+                </p>
+            </apex:pageBlockSection>
+            <!-- / Delete Benefit Design Records -->
+            
+            <!-- Delete Benefit Design Line Records -->
+            <apex:pageBlockSection columns="1" title="Benefit Design Line : {!intBenefitDesignLineCount}" collapsible="false" >
+                <apex:commandbutton styleClass="buttonStyle" value="Delete" action="{!deleteBenefitDesignLine}" onClick="if(!confirmDelete()) return false;" disabled="{!if(intBenefitDesignLineCount > 0,'FALSE','TRUE')}"/>
+            </apex:pageBlockSection>
+            <!-- / Delete Benefit Design Line Records -->
+            
+            <!-- Delete Child Account Records -->
+            <apex:pageBlockSection columns="1" title="Child Account : {!intPBMChildAccountCount + intPersonChildAccountCount} (MCO to PBM Linking : {!intPBMChildAccountCount}, Business Account to Person Account Linking : {!intPersonChildAccountCount})" collapsible="false" >
+                <apex:commandbutton styleClass="buttonStyle" value="Delete" action="{!deleteChildAccount}" onClick="if(!confirmDelete()) return false;" disabled="{!if(intPBMChildAccountCount + intPersonChildAccountCount > 0,'FALSE','TRUE')}"/>
+            </apex:pageBlockSection>
+            <!-- / Delete Child Account Records -->            
+            
+            <!-- Delete Coverage Policy Records -->
+            <apex:pageBlockSection columns="1" title="Coverage Policy : {!intCoveragePolicyCount}" collapsible="false" >
+                <apex:commandbutton styleClass="buttonStyle" value="Delete" action="{!deleteCoveragePolicy}" onClick="if(!confirmDelete()) return false;" disabled="{!if(intCoveragePolicyCount > 0,'FALSE','TRUE')}"/>  
+            </apex:pageBlockSection>
+            <!-- / Delete Coverage Policy Records -->
+            
+            <!-- Delete Drug Access Records -->
+            <apex:pageBlockSection columns="1" title="Drug Access : {!intDrugAccessCount}" collapsible="false" >
+                <apex:commandbutton styleClass="buttonStyle" value="Delete" action="{!deleteDrugAccess}" onClick="if(!confirmDelete()) return false;" disabled="{!if(intDrugAccessCount > 0,'FALSE','TRUE')}"/> 
+            </apex:pageBlockSection>
+            <!-- / Delete Drug Access Records -->
+            
+            <!-- Delete Formulary Product Records -->
+            <apex:pageBlockSection columns="1" title="Formulary Product (Drug) : {!intFormularyProductCount}" collapsible="false" >
+                <apex:commandbutton styleClass="buttonStyle" value="Delete" action="{!deleteFormularyProduct}" onClick="if(!confirmDelete()) return false;" disabled="{!if(intFormularyProductCount > 0,'FALSE','TRUE')}" status="status" /> 
+				<p>
+                    <b style="color:#fc4141;">Note</b>: Deleting this object data will also delete all linking objects data as well which include <b>Benefit Design Line, Coverage Policy and Plan-Product Formulary</b> object data.
+                </p>
+            </apex:pageBlockSection>
+            <!-- / Delete Formulary Product Records -->
+            
+            <!-- Delete Pharmacy Service Records -->
+            <apex:pageBlockSection columns="1" title="Pharmacy Service : {!intPharmacyServiceCount}" collapsible="false" >
+                <apex:commandbutton styleClass="buttonStyle" value="Delete" action="{!deletePharmacyService}" onClick="if(!confirmDelete()) return false;" disabled="{!if(intPharmacyServiceCount > 0,'FALSE','TRUE')}"/>   
+            </apex:pageBlockSection>
+            <!-- / Delete Pharmacy Service Records -->
+            
+            <!-- Delete Plan Product Records -->
+            <apex:pageBlockSection columns="1" title="Plan Product : {!intPlanProductCount}" collapsible="false" >
+                <apex:commandbutton styleClass="buttonStyle" value="Delete" action="{!deletePlanProduct}" onClick="if(!confirmDelete()) return false;" disabled="{!if(intPlanProductCount > 0,'FALSE','TRUE')}"/>
+                <p>
+                    <b style="color:#fc4141;">Note</b>: Deleting this object data will also delete the <b>Plan-Product Formulary</b> object data.
+                </p>
+            </apex:pageBlockSection>
+            <!-- / Delete Plan Product Records -->
+            
+            <!-- Delete Plan-Product Formulary Records -->
+            <apex:pageBlockSection columns="1"  title="Plan-Product Formulary : {!intProductFormularyCount}" collapsible="false" >
+                <apex:commandbutton styleClass="buttonStyle" value="Delete" action="{!deleteProductFormulary}" onClick="if(!confirmDelete()) return false;" disabled="{!if(intProductFormularyCount > 0,'FALSE','TRUE')}"/>
+            </apex:pageBlockSection>
+            <!-- / Delete Plan-Product Formulary Records -->
+            
+            <!-- Delete Specialty Provider JO Records -->
+            <apex:pageBlockSection columns="1" title="Specialty Provider JO : {!intSpecialtyProviderJOCount}" collapsible="false" >
+                <apex:commandbutton styleClass="buttonStyle" value="Delete" action="{!deleteSpecialtyProviderJO}" onClick="if(!confirmDelete()) return false;" disabled="{!if(intSpecialtyProviderJOCount > 0,'FALSE','TRUE')}"/>  
+            </apex:pageBlockSection>
+            <!-- / Delete Specialty Provider JO Records -->
+            
+            <!-- Delete Thera Class Records -->
+            <apex:pageBlockSection columns="1"  title="Thera Class : {!intTheraClassCount}" collapsible="false" >
+                <apex:commandbutton styleClass="buttonStyle" value="Delete" action="{!deleteTheraClass}" onClick="if(!confirmDelete()) return false;" disabled="{!if(intTheraClassCount > 0,'FALSE','TRUE')}"/>  
+            </apex:pageBlockSection>
+            <!-- / Delete Thera Class Records -->
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

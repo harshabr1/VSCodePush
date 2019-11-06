@@ -1,0 +1,63 @@
+<!--
+Name 			: BOT_BenefitDesignView
+Created by 		: Sreenivasulu Adipudi
+Created date 	: 05/22/2019
+Description 	: To display the list of drugs with status, restrictions and copay associated to the selected Benefitdesign.
+-->
+<aura:component controller="BOT_BenefitDesignViewCtrl" Implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:appHostable" Access="Global">
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="strMarkets" type="String[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="lstBenefitDesignLine" type="List"/>
+    <aura:attribute name="lstBenefitDesignbackup" type="List"/>
+    
+   	<div class="slds-grid slds-gutters">
+    	<div class="slds-col slds-size_1-of-10">
+    		<div class="slds-form_horizontal">
+            	<lightning:select name="markets" aura:id="markets" label="Market" onchange="{!c.marketFilter}" required="true">
+                	<aura:iteration items="{!v.strMarkets}" var="market">
+	          			<option name="markets1" aura:id="markets1" value="{!market}">{!market}</option>
+                        <!--<ui:inputSelectOption aura:id="markets1" text="{!market}" label="{!market}" />-->
+                   	</aura:iteration>
+                </lightning:select>
+            </div>
+        </div>
+    </div>
+    
+    <!--<div class="slds-truncate">Drug information</div>-->
+    <H1>Drug information</H1>
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer" style="vertical-align:middle;width: 100%">
+        <!-- Header row of plan demographics table -->
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col"> 
+                    <div class="slds-truncate" title="Name">Name</div>
+                </th> 
+                <th scope="col"> 
+                    <div class="slds-truncate" title="Status">Status</div>
+                </th>
+                <th scope="col"> 
+                    <div class="slds-truncate" title="Restrictions">Restrictions</div>
+                </th>
+                <th scope="col"> 
+                    <div class="slds-truncate" title="Copay">Copay</div>
+                </th>
+                <th scope="col"> 
+                    <div class="slds-truncate" title="Notes">Notes</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.lstBenefitDesignLine}" var="benefitDesignLine">
+            	<tr>
+                    <td><div class="slds-truncate" title="{!benefitDesignLine.Product_vod__r.Name}" style = "{!if(benefitDesignLine.Product_vod__r.Competitor_vod__c == false, 'font-weight:bold', '')}" >{!benefitDesignLine.Product_vod__r.Name}</div></td>
+                    <td><div class="slds-truncate" title="{!benefitDesignLine.Status_Source_vod__c}">{!benefitDesignLine.Status_Source_vod__c}</div></td>
+                    <td><div class="slds-truncate" title="{!benefitDesignLine.Restrictions_Source_vod__c}">{!benefitDesignLine.Restrictions_Source_vod__c}</div></td>
+                    <td><div class="slds-truncate" title="{!benefitDesignLine.Copay_Source_vod__c}">{!benefitDesignLine.Copay_Source_vod__c}</div></td>
+                    <td><div class="slds-truncate" title="{!benefitDesignLine.Notes_Source_vod__c}">{!benefitDesignLine.Notes_Source_vod__c}</div></td>
+                </tr>
+            </aura:iteration>
+        </tbody>
+        <!-- End of the table to display plan demographics -->
+    </table>
+</aura:component>

@@ -1,0 +1,13 @@
+<!-- 
+Name            : BOT_ClonePersonAccount
+Created by      : Sreenivasulu Adipudi
+Created Date    : 20-MAR-2019
+Description     : This page is written by BusinessOne Technologies Inc. It is used to clone the Person Account record.
+-->
+<apex:page standardController="Account" extensions="BOT_ClonePersonAccountExtn">
+    <apex:form >
+    	<apex:pageBlock >
+        	
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

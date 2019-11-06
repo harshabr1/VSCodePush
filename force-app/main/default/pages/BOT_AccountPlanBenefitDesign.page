@@ -1,0 +1,122 @@
+<!-- 
+Name 	   	 : BOT_AccountPlanBenefitDesign
+Created By 	 : Harsha BR
+Created Date : 14-Dec-2018
+Description  : It is  written by BusinessOne Technologies Inc.
+			   It displays the Benefit design line (Drug) records associated to selected Benefit Design and Market . 
+-->
+<apex:page standardController="Account_Plan_vod__c" extensions="BOT_AccountPlanBenefitDesignExtn">
+	<style>
+	.benefitDesign {
+  	  border: 1px solid #e8e8e8;
+      border-collapse: collapse;
+	}
+	
+    th {
+      padding-top: 5px;
+      padding-botton: 5px;
+      padding-left: 5px;
+      text-align: left;
+      background-color: #f2f2f2;
+      border: 1px solid #c9c9c9;
+	}
+        
+    td {
+  	  padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 5px;
+      border-bottom: 1px solid #e8e8e8;
+	}
+    .benefitDesign tr:hover {background-color: #e8f7ff;}
+	</style>
+    <apex:messages />
+    <apex:form >
+        <apex:pageBlock >
+            <!-- Channel dropdown Filter -->
+            <apex:pageBlockSection id="PB1" columns="1" >
+     
+        		<apex:outputPanel >
+                    
+                    <apex:outputLabel ><b>Benefit Design</b></apex:outputLabel>&nbsp;
+                    <apex:selectList size="1" value="{!strSelectedBD}">
+                        <apex:selectOptions value="{!pullBenefitDesign}" />
+                        <apex:actionSupport action="{!marketFilterRetrieve}" event="onchange" reRender="PB2" status="status" />
+                    </apex:selectList>
+                    <br/><br/>
+                    
+                    <apex:outputLabel ><b>Market</b> </apex:outputLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <apex:selectList size="1" value="{!strSelectedMarket}">
+                        <apex:selectOptions value="{!pullMarket}" />
+                        <apex:actionSupport action="{!marketFilterRetrieve}" event="onchange" reRender="benefitDesignTable" status="status" />
+                    </apex:selectList>
+                    
+                </apex:outputPanel>
+                
+                <!-- Processing status -->
+        		<apex:actionStatus id="status" startText="Loading...." startStyle="font-color:red;">
+            		<apex:facet name="start">
+                		<apex:image value="/img/loading.gif" />
+            		</apex:facet>
+        		</apex:actionStatus>
+        
+           		<!-- Benefit Design Table -->
+                <apex:pageBlock id="PB2"  rendered="{!if(intMarketsSize > 0, true, false)}">
+            		<!-- Benefit design table header section-->
+                	<table style= "width: 98.6%;position: sticky; border: 1px solid #c9c9c9;" class="benefitDesign">
+                    	<tr>
+                        	<th style = "width:20%;">{!$ObjectType.Formulary_Products_vod__c.fields.Name.Label}</th>
+                        	<th style = "width:15%;">{!$ObjectType.Benefit_Design_Line_vod__c.fields.Status_Source_vod__c.Label}</th>
+                        	<th style = "width:15%;">{!$ObjectType.Benefit_Design_Line_vod__c.fields.Restrictions_Source_vod__c.Label}</th>
+                        	<th style = "width:15%;">{!$ObjectType.Benefit_Design_Line_vod__c.fields.Copay_Source_vod__c.Label}</th>
+                        	<th style = "width:35%;">{!$ObjectType.Benefit_Design_Line_vod__c.fields.Notes_Source_vod__c.Label}</th>
+                    	</tr>
+                	</table>
+                	<!-- /Benefit design table header section-->
+                
+                	<!-- Benefit design table body section-->
+                	<apex:outputPanel id="benefitDesignTable">
+                    	<div style="overflow-y:scroll; height: 180px;">
+                        	<table style= "width: 100%;border-bottom: 1px solid #e8e8e8; background-color: #FFFFFF; border-collapse: collapse;" class="benefitDesign">
+                            	<apex:repeat value="{!lstBenefitDesignLines}" var="objBenefitDesignLine">
+                                	<tr>
+                                    	<td style = "width:20%;border-bottom: 1px solid #e8e8e8;"><apex:outputText value="{!objBenefitDesignLine.Product_vod__r.Name}" style="{!IF((objBenefitDesignLine.Competitor_vod__c==false),"font-weight:bold",'')}"/></td>
+                                    	<td style = "width:15%;border-bottom: 1px solid #e8e8e8;">{!objBenefitDesignLine.Status_Source_vod__c}</td>
+                                    	<td style = "width:15%;border-bottom: 1px solid #e8e8e8;">{!objBenefitDesignLine.Restrictions_Source_vod__c}</td>
+                                    	<td style = "width:15%;border-bottom: 1px solid #e8e8e8;">{!objBenefitDesignLine.Copay_Source_vod__c}</td>
+                                    	<td style = "width:35%;border-bottom: 1px solid #e8e8e8;">{!objBenefitDesignLine.Notes_Source_vod__c}</td>
+                                	</tr>
+                            	</apex:repeat>
+                        	</table>
+                    	</div>
+                	</apex:outputPanel>
+                	<!-- /Benefit design table body section-->
+                	
+                    <!--
+                    <div style="overflow: scroll; width: 100%; height: 200px;">
+            			<apex:pageBlockSection columns="1">
+            				<apex:outputPanel >
+          						<apex:pageBlockTable value="{!lstBenefitDesignLines}" var="objBenefitDesignLine" cellpadding="2" cellspacing="2" >
+                    				<apex:column headerValue="Product" value="{!objBenefitDesignLine.Product_vod__r.Name}" style="{!IF((objBenefitDesignLine.Competitor_vod__c==false),"font-weight:bold",'')}"/>	
+                    				<apex:column value="{!objBenefitDesignLine.Status_Source_vod__c}" />
+                        			<apex:column value="{!objBenefitDesignLine.Restrictions_Source_vod__c}" />
+                        			<apex:column value="{!objBenefitDesignLine.Copay_Source_vod__c}" />
+                        			<apex:column value="{!objBenefitDesignLine.Notes_Source_vod__c}" />
+                    			</apex:pageBlockTable>      
+                			</apex:outputPanel>
+            			</apex:pageBlockSection>
+            		</div>
+					-->
+                    
+        		</apex:pageBlock>
+                <!-- Benefit Design Table -->
+                
+                <!-- If Benefit Design data is not available -->
+        		<apex:pageBlock rendered="{!IF(intMarketsSize==0,'TRUE','FALSE')}">
+            		<apex:outputText style="font-size: 15px" value="{!$Label.BOT_NoDataAvailable}"/>
+        		</apex:pageBlock>
+        		<!-- /If Benefit Design data is not available -->
+
+        	</apex:pageBlockSection> 
+        </apex:pageBlock>
+    </apex:form>   
+</apex:page>
